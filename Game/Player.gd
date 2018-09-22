@@ -20,5 +20,4 @@ func _process(delta):
 	if(position - target).length() < 5:
 		velocity = Vector2(0,0)
 	position += velocity
-	position.x = clamp(position.x, 0, screensize.x)
-	position.y = clamp(position.y, 0, screensize.y)
+	#position.y = clamp(position.y, 0, screensize.y)
