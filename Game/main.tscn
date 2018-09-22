@@ -1,11 +1,22 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://TileMap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Dice.tscn" type="PackedScene" id=4]
 
-[node name="main" type="Node" index="0"]
+[node name="main" type="Node"]
 
-[node name="TileMap" parent="." index="0" instance=ExtResource( 1 )]
+script = ExtResource( 1 )
 
-position = Vector2( -29.3224, 29.3223 )
+[node name="TileMap" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( -200.486, 29.3223 )
+
+[node name="HUD" parent="." index="1" instance=ExtResource( 3 )]
+
+[node name="Dice" parent="." index="2" instance=ExtResource( 4 )]
+
+[connection signal="roll_dice" from="HUD" to="." method="roll_dice"]
 
 

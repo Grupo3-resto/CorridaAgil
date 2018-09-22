@@ -15,16 +15,11 @@ func get_center(pos):
 
 func _ready():
 	$Player.start(get_center(grid[player_tile]))
-	pass
 
 
-func get_input():
-	if Input.is_action_pressed('click'):
-		player_tile += 1
+func update_player(distance):
+		player_tile += distance
 		$Player.target = get_center(grid[player_tile])
 
 
-func _process(delta):
-	if $Player.velocity == Vector2(0,0):
-		get_input()
 
