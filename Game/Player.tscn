@@ -5,10 +5,10 @@
 
 [node name="Player" type="Node2D"]
 
-position = Vector2( 373.653, 312.172 )
+position = Vector2( 30, 30 )
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -16,9 +16,10 @@ speed = 200
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+position = Vector2( 4.41064, 6.10352e-005 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Animation", "Offset", "Transform" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="1"]
 

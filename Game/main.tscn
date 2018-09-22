@@ -1,40 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://asserts/Nebula Blue.png" type="Texture" id=1]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://TileMap.tscn" type="PackedScene" id=1]
 
 [node name="main" type="Node" index="0"]
 
-[node name="background" type="Sprite" parent="." index="0"]
+[node name="TileMap" parent="." index="0" instance=ExtResource( 1 )]
 
-visible = false
-position = Vector2( 514.005, 114.514 )
-texture = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
-
-position = Vector2( 528.489, 287.264 )
-
-[node name="TileMap" type="TileMap" parent="." index="2"]
-
-mode = 0
-tile_set = null
-cell_size = Vector2( 64, 64 )
-cell_quadrant_size = 16
-cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-cell_half_offset = 2
-cell_tile_origin = 0
-cell_y_sort = false
-cell_clip_uv = false
-collision_use_kinematic = false
-collision_friction = 1.0
-collision_bounce = 0.0
-collision_layer = 1
-collision_mask = 1
-occluder_light_mask = 1
-format = 1
-tile_data = PoolIntArray(  )
-_sections_unfolded = [ "Cell", "Collision", "Occluder", "Transform", "Visibility" ]
+position = Vector2( -29.3224, 29.3223 )
 
 

@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://asserts/chessboardblackandwhite.png" type="Texture" id=1]
+
+[node name="TileSet" type="Node2D"]
+
+[node name="White Square" type="Sprite" parent="." index="0"]
+
+position = Vector2( 20, 32 )
+texture = ExtResource( 1 )
+offset = Vector2( 10, -2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 60, 60 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Black Square" type="Sprite" parent="." index="1"]
+
+position = Vector2( 193.039, 29.3223 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 60, 0, 60, 60 )
+_sections_unfolded = [ "Region" ]
+
+

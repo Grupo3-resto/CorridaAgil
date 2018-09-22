@@ -1,0 +1,26 @@
+[gd_resource type="TileSet" load_steps=2 format=2]
+
+[ext_resource path="res://asserts/chessboardblackandwhite.png" type="Texture" id=1]
+
+[resource]
+
+0/name = "black square"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 60, 0, 60, 60 )
+0/is_autotile = false
+0/occluder_offset = Vector2( 30, 30 )
+0/navigation_offset = Vector2( 30, 30 )
+0/shapes = [  ]
+1/name = "white square"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 60, 60 )
+1/is_autotile = false
+1/occluder_offset = Vector2( 30, 30 )
+1/navigation_offset = Vector2( 30, 30 )
+1/shapes = [  ]
+_sections_unfolded = [ "0", "1" ]
+
