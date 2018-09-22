@@ -4,11 +4,21 @@ export (int) var speed = 200
 
 var target = Vector2()
 var velocity = Vector2()
+var screensize = Vector2()
 
-func _process(delta):
+func _ready():
+	screensize = get_viewport().size
+
+func get_input():
 	if Input.is_action_pressed('click'):
 		target = get_global_mouse_position()
-		velocity = (target - position).normalized() * speed * delta
+
+func _process(delta):
+	get_input()
+	velocity = (target - position).normalized() * speed * delta
+	
+	if(position - target).length() < 5:
+		velocity = Vector2(0,0)
 	position += velocity
-	if(position == target):
-		velocity = (target - position)
+	position.x = clamp(position.x, 0, screensize.x)
+	position.y = clamp(position.y, 0, screensize.y)

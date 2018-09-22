@@ -5,17 +5,18 @@
 
 [node name="Player" type="Node2D" index="0"]
 
+position = Vector2( 324, 248 )
 script = ExtResource( 1 )
-speed = 200
-
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
-position = Vector2( 485.333, 280.177 )
-scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
+speed = 200
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 
