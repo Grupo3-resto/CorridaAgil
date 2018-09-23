@@ -55,3 +55,11 @@ func update_player(distance, pos):
 			passed_cell.push_back(cell)
 			player_tile = grid.find(cell)
 			$Player.target = get_center(grid[player_tile])
+			
+			var t = Timer.new() # Timer p/ o player seguir o caminho
+			t.set_wait_time(.3)
+			t.set_one_shot(true)
+			self.add_child(t)
+			t.start()
+			yield(t, "timeout")
+			t.queue_free() 
