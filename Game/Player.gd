@@ -12,7 +12,6 @@ func start(pos):
 
 func _process(delta):
 	velocity = (target - position).normalized() * speed * delta
-	
 	if(position - target).length() < 5:
 		velocity = Vector2(0,0)
 	position += velocity
