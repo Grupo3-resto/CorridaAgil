@@ -4,6 +4,7 @@ export (int) var speed = 200
 
 var target = Vector2()
 var velocity = Vector2()
+var path = []
 
 
 func start(pos):
@@ -11,7 +12,10 @@ func start(pos):
 	target = position
 
 func _process(delta):
-	velocity = (target - position).normalized() * speed * delta
-	if(position - target).length() < 5:
-		velocity = Vector2(0,0)
-	position += velocity
+	if path.size() > 0:
+		target = path[0]
+		velocity = (target - position).normalized() * speed * delta
+		if(position - target).length() < 5:
+			velocity = Vector2(0,0)
+			path.pop_front()
+		position += velocity

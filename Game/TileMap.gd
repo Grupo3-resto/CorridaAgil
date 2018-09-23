@@ -3,7 +3,7 @@ extends TileMap
 var half_tile_size = get_cell_size() / 2
 var grid = get_used_cells ()  #array de todas as celulas usadas
 var player_tile = grid.find(Vector2(0,0)) #guarda o id da celula que o player esta posicionado
-var passed_cell = [Vector2(0,0)]
+var passed_cell = [Vector2(0,0)] #guarda posição das celulas na quais o player ja passou
 
 func get_center(cell):
 	var pos = map_to_world(cell)
@@ -46,12 +46,42 @@ func search_for_neighbors(cell):
 	return neighbors
 
 
+func update_player_path(way):
+	var teste = way.back()
+	var i = 1
+	while i < way.size():
+		if way[i].x == way[i - 1].x:
+			i += 1
+			while i < way.size():
+				if way[i].x == way[i - 1].x:
+					i += 1 
+				else:
+					player_tile = grid.find(way[i - 1])
+					$Player.path.push_back(get_center(grid[player_tile]))  #adicona ao path se for a utima posição da array 
+					break
+			player_tile = grid.find(way[i - 1])
+			$Player.path.push_back(get_center(grid[player_tile])) 
+		
+		elif way[i].y == way[i - 1].y:
+			i += 1
+			while i < way.size():
+				if  way[i].y == way[i - 1].y:
+					i += 1
+				else :
+					player_tile = grid.find(way[i - 1])
+					$Player.path.push_back(get_center(grid[player_tile]))  #adicona ao path se for a utima posição da array
+					break 
+			player_tile = grid.find(way[i - 1])
+			$Player.path.push_back(get_center(grid[player_tile])) 
+
+
 func update_player(distance, pos):
 	var cell = world_to_map(pos)
+	var way = [cell]
 	for i in range(distance):
 		var neighbors = search_for_neighbors(cell)
 		if neighbors.size() > 0:
 			cell = neighbors[0]
 			passed_cell.push_back(cell)
-			player_tile = grid.find(cell)
-			$Player.target = get_center(grid[player_tile])
+			way.push_back(cell)
+	update_player_path(way)
