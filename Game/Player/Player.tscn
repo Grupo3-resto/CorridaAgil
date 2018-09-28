@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://asserts/icon.png" type="Texture" id=2]
+
 
 [node name="Player" type="Node2D"]
 
@@ -17,7 +18,7 @@ speed = 200
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 position = Vector2( 4.41064, 6.10352e-005 )
-scale = Vector2( 0.8, 0.8 )
+rotation = 0.00337806
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Offset", "Transform" ]
 

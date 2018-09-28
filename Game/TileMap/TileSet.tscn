@@ -2,7 +2,7 @@
 
 [ext_resource path="res://asserts/chessboardblackandwhite.png" type="Texture" id=1]
 
-[node name="TileSet" type="Node2D"]
+[node name="TileSet" type="Node2D" index="0"]
 
 [node name="White Square" type="Sprite" parent="." index="0"]
 
