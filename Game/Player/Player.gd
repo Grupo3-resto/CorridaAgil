@@ -1,5 +1,6 @@
 extends Node2D
 
+signal has_stopped
 export (int) var speed = 200
 
 var target = Vector2()
@@ -18,4 +19,6 @@ func _process(delta):
 		if(position - target).length() < 5:
 			velocity = Vector2(0,0)
 			path.pop_front()
+			if  path.size() == 0:
+				emit_signal("has_stopped")
 		position += velocity

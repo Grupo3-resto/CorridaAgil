@@ -1,6 +1,5 @@
 extends Node2D
 
-
 func hide_dice():
 	$dice_1.hide()
 	$dice_2.hide()
@@ -15,10 +14,16 @@ func _ready():
 
 
 func show_result(result, pos):
-	hide_dice()
+	var t = Timer.new()
+	t.set_wait_time(2)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	get_parent().get_node("HUD/RollDice").hide()
 	position = pos
 	position.x += 200
-	
+	position.y += 200
+	hide_dice()	
 	if result == 1:
 		$dice_1.show()
 	elif result == 2:
@@ -31,4 +36,9 @@ func show_result(result, pos):
 		$dice_5.show()
 	elif result == 6:
 		$dice_6.show()
+	yield(t, "timeout")
+	t.queue_free()
+	get_parent().get_node("HUD/RollDice").show()
+	hide_dice()
+	
 

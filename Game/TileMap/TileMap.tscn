@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://TileMap/Tile_squares.tres" type="TileSet" id=1]
+[ext_resource path="res://TileMap/TileMap.gd" type="Script" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://TileMap/Functionalities.gd" type="Script" id=4]
+
+[node name="TileMap" type="TileMap"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 60, 60 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 65544, 1, 0, 131080, 1, 0, 196616, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 262159, 1, 0, 262160, 1, 0, 327688, 1, 0, 393224, 1, 0, 458760, 1, 0, 524296, 1, 0, 589832, 1, 0, 655368, 1, 0, 720904, 1, 0, 786440, 1, 0, 851976, 1, 0, 917512, 1, 0, 983048, 1, 0, 983049, 1, 0, 983050, 1, 0, 983051, 1, 0, 983052, 1, 0, 983053, 1, 0, 983054, 1, 0, 983055, 1, 0, 983056, 1, 0 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Cell", "Collision", "Transform" ]
+FirstTile = Vector2( 0, 0 )
+
+[node name="Player" parent="." index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 179.263, 257.254 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Functionalities" type="Node2D" parent="CanvasLayer" index="0"]
+
+rotation = 0.0163659
+scale = Vector2( 1, 1 )
+script = ExtResource( 4 )
+
+[connection signal="has_stopped" from="Player" to="CanvasLayer/Functionalities" method="_on_Player_has_stopped"]
+
+
