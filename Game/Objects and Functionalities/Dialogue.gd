@@ -10,7 +10,7 @@ export(String, MULTILINE) var LabelDialogue = ""
 func _ready():
 	PanelSize = Vector2($Panel.margin_right - $Panel.margin_left , $Panel.margin_bottom - $Panel.margin_top)
 	display_choices()
-	set_dialogue()
+	display_dialogue()
 
 #pos representa a posição extrema esqueda do botão
 #a oos valores x e y de pos precisa ser um numero entre 0 a 100 independente das margins do Panel
@@ -22,7 +22,7 @@ func set_pos(pos, size, choice_button):
 	choice_button.margin_bottom = choice_button.margin_top + PanelSize.y*(size.y/100)
 
 
-#cria butoes que representaram escolhas 
+#cria butoes que representam escolhas 
 func display_choices(button_array = ButtonList, size = Vector2(20, 5), pos = Vector2(40, 50)):
 	if button_array != null :
 		var number_of_buttons = button_array.size()
@@ -45,7 +45,7 @@ func display_choices(button_array = ButtonList, size = Vector2(20, 5), pos = Vec
 						set_pos(Vector2(pos.x, pos.y + 15*(i - 3)) , size , choice_button)
 
 
-func set_dialogue(dialogue = LabelDialogue):
+func display_dialogue(dialogue = LabelDialogue):
 	$Panel/RichTextLabel.clear()
 	$Panel/RichTextLabel.text = dialogue
 

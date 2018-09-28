@@ -3,10 +3,11 @@
 [ext_resource path="res://TileMap/Tile_squares.tres" type="TileSet" id=1]
 [ext_resource path="res://TileMap/TileMap.gd" type="Script" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://TileMap/Functionalities.gd" type="Script" id=4]
+[ext_resource path="res://TileMap/Event_List.gd" type="Script" id=4]
 
 [node name="TileMap" type="TileMap"]
 
+position = Vector2( -244.282, -1.85065 )
 mode = 0
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 60, 60 )
@@ -32,20 +33,15 @@ FirstTile = Vector2( 0, 0 )
 
 position = Vector2( 179.263, 257.254 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
+[node name="Event_List" type="CanvasLayer" parent="." index="1"]
 
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-
-[node name="Functionalities" type="Node2D" parent="CanvasLayer" index="0"]
-
-rotation = 0.0163659
-scale = Vector2( 1, 1 )
 script = ExtResource( 4 )
 
-[connection signal="has_stopped" from="Player" to="CanvasLayer/Functionalities" method="_on_Player_has_stopped"]
+[connection signal="has_stopped" from="Player" to="Event_List" method="_on_Player_has_stopped"]
 
 

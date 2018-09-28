@@ -20,5 +20,5 @@ func set_dialogue_list():
 
 
 func _on_Dialogue_next_dialogue():
-	$HUD/Dialogue.set_dialogue(DialogueList[0])
+	$HUD/Dialogue.display_dialogue(DialogueList[0])
 	DialogueList.pop_front()
