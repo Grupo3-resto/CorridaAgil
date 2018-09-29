@@ -6,6 +6,7 @@ var half_tile_size = get_cell_size() / 2
 var grid = get_used_cells ()  #array de todas as celulas usadas
 var player_tile = grid.find(FirstTile) #guarda o id da celula que o player esta posicionado
 var passed_cell = [Vector2(0,0)] #guarda posição das celulas na quais o player ja passou
+var Player 
 
 func get_center(cell):
 	var pos = map_to_world(cell)
@@ -15,7 +16,8 @@ func get_center(cell):
 
 
 func _ready():
-	$Player.start(get_center(grid[player_tile]))
+	Player = get_parent().get_node("Player")
+	Player.start(get_center(grid[player_tile]))
 
 
 func search_for_neighbors(cell):
@@ -60,10 +62,10 @@ func update_player_path(path):
 					i += 1 
 				else:
 					player_tile = grid.find(path[i - 1])
-					$Player.path.push_back(get_center(grid[player_tile]))  #adicona ao path se for a utima posição da array 
+					Player.path.push_back(get_center(grid[player_tile]))  #adicona ao path se for a utima posição da array 
 					break
 			player_tile = grid.find(path[i - 1])
-			$Player.path.push_back(get_center(grid[player_tile])) 
+			Player.path.push_back(get_center(grid[player_tile])) 
 		
 		elif path[i].y == path[i - 1].y:
 			i += 1
@@ -72,10 +74,10 @@ func update_player_path(path):
 					i += 1
 				else :
 					player_tile = grid.find(path[i - 1])
-					$Player.path.push_back(get_center(grid[player_tile]))  #adicona ao path se for a utima posição da array
+					Player.path.push_back(get_center(grid[player_tile]))  #adicona ao path se for a utima posição da array
 					break 
 			player_tile = grid.find(path[i - 1])
-			$Player.path.push_back(get_center(grid[player_tile])) 
+			Player.path.push_back(get_center(grid[player_tile])) 
 
 
 func ssize(array):

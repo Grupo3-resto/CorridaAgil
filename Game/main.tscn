@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://TileMap/TileMap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects and Functionalities/Dialogue.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects and Functionalities/Dice.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=6]
 
-[node name="main" type="Node" index="0"]
+[node name="main" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -25,8 +26,12 @@ E eu serei o consultor que ti ajudará a implementar o scrum na sua empresa."
 
 [node name="Dice" parent="." index="2" instance=ExtResource( 5 )]
 
+[node name="Player" parent="." index="3" instance=ExtResource( 6 )]
+
 [connection signal="roll_dice" from="HUD" to="." method="roll_dice"]
 
 [connection signal="next_dialogue" from="HUD/Dialogue" to="." method="_on_Dialogue_next_dialogue"]
+
+[connection signal="has_stopped" from="Player" to="TileMap/Event_List" method="_on_Player_has_stopped"]
 
 

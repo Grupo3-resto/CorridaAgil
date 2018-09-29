@@ -8,8 +8,8 @@ func _ready():
 func roll_dice():
 	randomize()
 	var distance = randi()%6 + 1
-	$Dice.show_result(distance, $TileMap/Player.position)
-	$TileMap.update_player(distance, $TileMap/Player.position)
+	$Dice.show_result(distance, $Player.position)
+	$TileMap.update_player(distance, $Player.position)
 
 func set_dialogue_list():
 	DialogueList.push_back("Explicar o scrum")

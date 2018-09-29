@@ -4,7 +4,7 @@ var dialogue_box = preload("res://Objects and Functionalities/Dialogue.tscn")
 
 
 func _on_Player_has_stopped():
-	var pos = get_parent().get_node("Player").position
+	var pos = get_parent().get_parent().get_node("Player").position
 	var player_tile = get_parent().world_to_map(pos)
 	match player_tile:
 		Vector2(4,0), Vector2(5,0),Vector2(6,0):

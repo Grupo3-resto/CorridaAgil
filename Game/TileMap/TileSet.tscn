@@ -1,24 +1,282 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=47 format=2]
 
-[ext_resource path="res://asserts/chessboardblackandwhite.png" type="Texture" id=1]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_000.png" type="Texture" id=1]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_001.png" type="Texture" id=2]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_002.png" type="Texture" id=3]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_003.png" type="Texture" id=4]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_004.png" type="Texture" id=5]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_005.png" type="Texture" id=6]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_006.png" type="Texture" id=7]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_007.png" type="Texture" id=8]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_008.png" type="Texture" id=9]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_009.png" type="Texture" id=10]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_010.png" type="Texture" id=11]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_011.png" type="Texture" id=12]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_012.png" type="Texture" id=13]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_013.png" type="Texture" id=14]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_014.png" type="Texture" id=15]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_015.png" type="Texture" id=16]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_016.png" type="Texture" id=17]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_017.png" type="Texture" id=18]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_018.png" type="Texture" id=19]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_019.png" type="Texture" id=20]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_020.png" type="Texture" id=21]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_021.png" type="Texture" id=22]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_022.png" type="Texture" id=23]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_023.png" type="Texture" id=24]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_024.png" type="Texture" id=25]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_025.png" type="Texture" id=26]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_026.png" type="Texture" id=27]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_027.png" type="Texture" id=28]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_028.png" type="Texture" id=29]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_029.png" type="Texture" id=30]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_030.png" type="Texture" id=31]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_031.png" type="Texture" id=32]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_032.png" type="Texture" id=33]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_033.png" type="Texture" id=34]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_034.png" type="Texture" id=35]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_035.png" type="Texture" id=36]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_036.png" type="Texture" id=37]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_037.png" type="Texture" id=38]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_038.png" type="Texture" id=39]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_039.png" type="Texture" id=40]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_040.png" type="Texture" id=41]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_041.png" type="Texture" id=42]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_042.png" type="Texture" id=43]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_043.png" type="Texture" id=44]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_044.png" type="Texture" id=45]
+[ext_resource path="res://asserts/Isometrics Tiles/isometric-city/PNG/cityTiles_045.png" type="Texture" id=46]
 
-[node name="TileSet" type="Node2D" index="0"]
+[node name="TileSet" type="Node2D"]
 
-[node name="White Square" type="Sprite" parent="." index="0"]
+[node name="cityTiles_000" type="Sprite" parent="." index="0"]
 
-position = Vector2( 20, 32 )
+position = Vector2( 80, 60 )
 texture = ExtResource( 1 )
-offset = Vector2( 10, -2 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 60, 60 )
-_sections_unfolded = [ "Region" ]
 
-[node name="Black Square" type="Sprite" parent="." index="1"]
+[node name="cityTiles_001" type="Sprite" parent="." index="1"]
 
-position = Vector2( 193.039, 29.3223 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 60, 0, 60, 60 )
-_sections_unfolded = [ "Region" ]
+position = Vector2( 80, 180 )
+texture = ExtResource( 2 )
+
+[node name="cityTiles_002" type="Sprite" parent="." index="2"]
+
+position = Vector2( 80, 300 )
+texture = ExtResource( 3 )
+
+[node name="cityTiles_003" type="Sprite" parent="." index="3"]
+
+position = Vector2( 80, 420 )
+texture = ExtResource( 4 )
+
+[node name="cityTiles_004" type="Sprite" parent="." index="4"]
+
+position = Vector2( 319.891, 44.2323 )
+texture = ExtResource( 5 )
+
+[node name="cityTiles_005" type="Sprite" parent="." index="5"]
+
+position = Vector2( 320, 180 )
+texture = ExtResource( 6 )
+
+[node name="cityTiles_006" type="Sprite" parent="." index="6"]
+
+position = Vector2( 320, 310 )
+texture = ExtResource( 7 )
+
+[node name="cityTiles_007" type="Sprite" parent="." index="7"]
+
+position = Vector2( 310, 430 )
+texture = ExtResource( 8 )
+
+[node name="cityTiles_008" type="Sprite" parent="." index="8"]
+
+position = Vector2( 520, 70 )
+texture = ExtResource( 9 )
+
+[node name="cityTiles_009" type="Sprite" parent="." index="9"]
+
+position = Vector2( 520, 180 )
+texture = ExtResource( 10 )
+
+[node name="cityTiles_010" type="Sprite" parent="." index="10"]
+
+position = Vector2( 520, 300 )
+texture = ExtResource( 11 )
+
+[node name="cityTiles_011" type="Sprite" parent="." index="11"]
+
+position = Vector2( 530, 420 )
+texture = ExtResource( 12 )
+
+[node name="cityTiles_012" type="Sprite" parent="." index="12"]
+
+position = Vector2( 720, 50 )
+texture = ExtResource( 13 )
+
+[node name="cityTiles_013" type="Sprite" parent="." index="13"]
+
+position = Vector2( 710, 200 )
+texture = ExtResource( 14 )
+
+[node name="cityTiles_014" type="Sprite" parent="." index="14"]
+
+position = Vector2( 710, 330 )
+texture = ExtResource( 15 )
+
+[node name="cityTiles_015" type="Sprite" parent="." index="15"]
+
+position = Vector2( 720, 430 )
+texture = ExtResource( 16 )
+
+[node name="cityTiles_016" type="Sprite" parent="cityTiles_015" index="0"]
+
+position = Vector2( 200, -370 )
+texture = ExtResource( 17 )
+
+[node name="cityTiles_017" type="Sprite" parent="cityTiles_015" index="1"]
+
+position = Vector2( 190, -230 )
+texture = ExtResource( 18 )
+
+[node name="cityTiles_018" type="Sprite" parent="cityTiles_015" index="2"]
+
+position = Vector2( 200, -100 )
+texture = ExtResource( 19 )
+
+[node name="cityTiles_019" type="Sprite" parent="cityTiles_015" index="3"]
+
+position = Vector2( 190, 30 )
+texture = ExtResource( 20 )
+
+[node name="cityTiles_020" type="Sprite" parent="cityTiles_015" index="4"]
+
+position = Vector2( 390, -380 )
+texture = ExtResource( 21 )
+
+[node name="cityTiles_021" type="Sprite" parent="cityTiles_015" index="5"]
+
+position = Vector2( 390, -240 )
+texture = ExtResource( 22 )
+
+[node name="cityTiles_022" type="Sprite" parent="cityTiles_015" index="6"]
+
+position = Vector2( 390, -90 )
+texture = ExtResource( 23 )
+
+[node name="cityTiles_023" type="Sprite" parent="cityTiles_015" index="7"]
+
+position = Vector2( 380, 30 )
+texture = ExtResource( 24 )
+
+[node name="cityTiles_024" type="Sprite" parent="." index="16"]
+
+position = Vector2( 1300, 50 )
+texture = ExtResource( 25 )
+
+[node name="cityTiles_025" type="Sprite" parent="." index="17"]
+
+position = Vector2( 1300, 190 )
+texture = ExtResource( 26 )
+
+[node name="cityTiles_026" type="Sprite" parent="." index="18"]
+
+position = Vector2( 1300, 330 )
+texture = ExtResource( 27 )
+
+[node name="cityTiles_027" type="Sprite" parent="." index="19"]
+
+position = Vector2( 1320, 480 )
+texture = ExtResource( 28 )
+
+[node name="cityTiles_028" type="Sprite" parent="." index="20"]
+
+position = Vector2( 1530, 60 )
+texture = ExtResource( 29 )
+
+[node name="cityTiles_029" type="Sprite" parent="." index="21"]
+
+position = Vector2( 1520, 180 )
+texture = ExtResource( 30 )
+
+[node name="cityTiles_030" type="Sprite" parent="." index="22"]
+
+position = Vector2( 1520, 320 )
+texture = ExtResource( 31 )
+
+[node name="cityTiles_031" type="Sprite" parent="." index="23"]
+
+position = Vector2( 1510, 480 )
+texture = ExtResource( 32 )
+
+[node name="cityTiles_032" type="Sprite" parent="." index="24"]
+
+position = Vector2( 1760, 70 )
+texture = ExtResource( 33 )
+
+[node name="cityTiles_033" type="Sprite" parent="." index="25"]
+
+position = Vector2( 1750, 190 )
+texture = ExtResource( 34 )
+
+[node name="cityTiles_034" type="Sprite" parent="." index="26"]
+
+position = Vector2( 1760, 330 )
+texture = ExtResource( 35 )
+
+[node name="cityTiles_035" type="Sprite" parent="." index="27"]
+
+position = Vector2( 1750, 490 )
+texture = ExtResource( 36 )
+
+[node name="cityTiles_036" type="Sprite" parent="." index="28"]
+
+position = Vector2( 1990, 60 )
+texture = ExtResource( 37 )
+
+[node name="cityTiles_037" type="Sprite" parent="." index="29"]
+
+position = Vector2( 1980, 200 )
+texture = ExtResource( 38 )
+
+[node name="cityTiles_038" type="Sprite" parent="." index="30"]
+
+position = Vector2( 2000, 330 )
+texture = ExtResource( 39 )
+
+[node name="cityTiles_039" type="Sprite" parent="." index="31"]
+
+position = Vector2( 2000, 480 )
+texture = ExtResource( 40 )
+
+[node name="cityTiles_040" type="Sprite" parent="." index="32"]
+
+position = Vector2( 2240, 80 )
+texture = ExtResource( 41 )
+
+[node name="cityTiles_041" type="Sprite" parent="." index="33"]
+
+position = Vector2( 2230, 220 )
+texture = ExtResource( 42 )
+
+[node name="cityTiles_042" type="Sprite" parent="." index="34"]
+
+position = Vector2( 2220, 370 )
+texture = ExtResource( 43 )
+
+[node name="cityTiles_043" type="Sprite" parent="." index="35"]
+
+position = Vector2( 2210, 500 )
+texture = ExtResource( 44 )
+
+[node name="cityTiles_044" type="Sprite" parent="." index="36"]
+
+position = Vector2( 2500, 60 )
+texture = ExtResource( 45 )
+
+[node name="cityTiles_045" type="Sprite" parent="." index="37"]
+
+position = Vector2( 2460, 190 )
+texture = ExtResource( 46 )
 
 
