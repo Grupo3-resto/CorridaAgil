@@ -4,8 +4,8 @@ signal next_dialogue
 var DialogueCount = 1
 var PanelSize
 
-export(Array, String) var ButtonList 
-export(String, MULTILINE) var LabelDialogue = ""
+export(Array, String) var ButtonList #array de cada alternativa
+export(String, MULTILINE) var LabelDialogue = ""  #texto que vai aparecer no painel
 
 func _ready():
 	PanelSize = Vector2($Panel.margin_right - $Panel.margin_left , $Panel.margin_bottom - $Panel.margin_top)
@@ -44,11 +44,12 @@ func display_choices(button_array = ButtonList, size = Vector2(20, 5), pos = Vec
 					else:
 						set_pos(Vector2(pos.x, pos.y + 15*(i - 3)) , size , choice_button)
 
-
+#recebe texto do painel
 func display_dialogue(dialogue = LabelDialogue):
 	$Panel/RichTextLabel.clear()
 	$Panel/RichTextLabel.text = dialogue
 
+#botão proximo ou fechar
 func _on_Button_pressed():
 	DialogueCount -= 1
 	if DialogueCount == 0:
@@ -56,6 +57,7 @@ func _on_Button_pressed():
 	else:
 		emit_signal("next_dialogue")
 
+#quando uma das alternativas é pressionada
 func _on_choice_button_pressed():
 	$Panel.hide()
 
