@@ -64,7 +64,6 @@ func load_json():
 	file.open("res://dialogo.json", File.READ)
 	var dialogData = JSON.parse(file.get_as_text()).result
 	file.close()
-	print(dialogData["dialogo"][1]["text"])
 
 #Retorna o texto do dialogo a ser exibido
 #Input: type: Tipo de dialogo, por enquanto eh "pergunta" ou "dialogo"

@@ -1,11 +1,11 @@
 extends TileMap
 
-export (Vector2) var FirstTile = Vector2(0,0)
+export (Vector2) var FirstTile
 
 var half_tile_size = get_cell_size() / 2
 var grid = get_used_cells ()  #array de todas as celulas usadas
 var player_tile = grid.find(FirstTile) #guarda o id da celula que o player esta posicionado
-var passed_cell = [Vector2(0,0)] #guarda posição das celulas na quais o player ja passou
+var passed_cell = [] #guarda posição das celulas na quais o player ja passou
 var Player 
 
 func get_center(cell):
@@ -16,6 +16,8 @@ func get_center(cell):
 
 func _ready():
 	Player = get_parent().get_node("Player")
+	FirstTile = Vector2(11, 8)
+	passed_cell.push_back(FirstTile)
 	Player.start(get_center(grid[player_tile]))
 
 
