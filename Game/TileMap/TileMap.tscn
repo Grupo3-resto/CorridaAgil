@@ -1,15 +1,15 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://TileMap/Tile_squares.tres" type="TileSet" id=1]
+[ext_resource path="res://TileMap/Tile_Set_Ci.tres" type="TileSet" id=1]
 [ext_resource path="res://TileMap/TileMap.gd" type="Script" id=2]
 [ext_resource path="res://TileMap/Event_List.gd" type="Script" id=3]
 
 [node name="TileMap" type="TileMap" index="0"]
 
-position = Vector2( -244.282, -1.85065 )
-mode = 0
+position = Vector2( -430.594, -9.88715 )
+mode = 1
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 60, 60 )
+cell_size = Vector2( 129, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 cell_half_offset = 2
@@ -23,9 +23,9 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 65544, 1, 0, 131080, 1, 0, 196616, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 262159, 1, 0, 262160, 1, 0, 327688, 1, 0, 393224, 1, 0, 458760, 1, 0, 524296, 1, 0, 589832, 1, 0, 655368, 1, 0, 720904, 1, 0, 786440, 1, 0, 851976, 1, 0, 917512, 1, 0, 983048, 1, 0, 983049, 1, 0, 983050, 1, 0, 983051, 1, 0, 983052, 1, 0, 983053, 1, 0, 983054, 1, 0, 983055, 1, 0, 983056, 1, 0 )
+tile_data = PoolIntArray( -131074, 233, 0, -131073, 233, 0, -196608, 233, 0, -196607, 233, 0, -196606, 233, 0, -196605, 233, 0, -196604, 233, 0, -196603, 233, 0, -196602, 233, 0, -196601, 233, 0, -196600, 233, 0, -196599, 233, 0, -196598, 233, 0, -1, 12, 0, -65536, 12, 0, -65535, 12, 0, -65534, 12, 0, -65533, 12, 0, -65532, 12, 0, -65531, 12, 0, -65530, 12, 0, -65529, 12, 0, -65528, 12, 0, -65527, 12, 0, -65526, 12, 0, -65525, 19, 0, 11, 13, 0, 65547, 13, 0, 131083, 13, 0, 196619, 13, 0, 262155, 13, 0, 327691, 13, 0, 393227, 13, 0, 458763, 13, 0, 524299, 13, 0 )
 script = ExtResource( 2 )
-_sections_unfolded = [ "Cell", "Collision", "Transform" ]
+_sections_unfolded = [ "Cell", "Collision", "Occluder", "Transform", "Z Index" ]
 FirstTile = Vector2( 0, 0 )
 
 [node name="Event_List" type="CanvasLayer" parent="." index="0"]
@@ -36,5 +36,46 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 3 )
+
+[node name="TileMap" type="TileMap" parent="." index="1"]
+
+mode = 1
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 129, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -196611, 235, 0, -196610, 235, 0, -196609, 235, 0, -262144, 235, 0, -262143, 235, 0, -262142, 235, 0, -262141, 235, 0, -262140, 235, 0, -262139, 235, 0, -262138, 235, 0, -262137, 235, 0, -262136, 235, 0, -262135, 235, 0 )
+_sections_unfolded = [ "Cell", "Collision" ]
+
+[node name="TileMap" type="TileMap" parent="TileMap" index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -262144, 235, 0, -196606, 235, 0, -131068, 235, 0 )
 
 

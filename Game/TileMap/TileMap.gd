@@ -10,7 +10,6 @@ var Player
 
 func get_center(cell):
 	var pos = map_to_world(cell)
-	pos.x += half_tile_size.x
 	pos.y += half_tile_size.y
 	return pos
 

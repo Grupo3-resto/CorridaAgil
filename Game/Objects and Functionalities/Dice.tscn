@@ -1,12 +1,13 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Objects and Functionalities/Dice.gd" type="Script" id=1]
-[ext_resource path="res://asserts/dice/dieRed1.png" type="Texture" id=2]
-[ext_resource path="res://asserts/dice/dieRed2.png" type="Texture" id=3]
-[ext_resource path="res://asserts/dice/dieRed3.png" type="Texture" id=4]
-[ext_resource path="res://asserts/dice/dieRed4.png" type="Texture" id=5]
-[ext_resource path="res://asserts/dice/dieRed5.png" type="Texture" id=6]
-[ext_resource path="res://asserts/dice/dieRed6.png" type="Texture" id=7]
+[ext_resource path="res://assets/dice/dieRed1.png" type="Texture" id=2]
+[ext_resource path="res://assets/dice/dieRed2.png" type="Texture" id=3]
+[ext_resource path="res://assets/dice/dieRed3.png" type="Texture" id=4]
+[ext_resource path="res://assets/dice/dieRed4.png" type="Texture" id=5]
+[ext_resource path="res://assets/dice/dieRed5.png" type="Texture" id=6]
+[ext_resource path="res://assets/dice/dieRed6.png" type="Texture" id=7]
+
 
 [node name="Dice" type="Node2D"]
 

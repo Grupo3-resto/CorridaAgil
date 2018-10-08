@@ -1,0 +1,22 @@
+{
+	"dialogo":[
+		{
+		"text":"exemplo de texto 1"
+		}
+		,
+		{
+		"text":"exemplo de texto 2"
+		}
+
+	],
+	"pergunta":[
+		{
+			"text": "exemplo de pergunta 1",
+			"opcoes":[
+				"opcao 1",
+				"opcao 2"
+			]
+		}
+	]
+}
+

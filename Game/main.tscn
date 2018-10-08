@@ -28,6 +28,8 @@ E eu serei o consultor que ti ajudará a implementar o scrum na sua empresa."
 
 [node name="Player" parent="." index="3" instance=ExtResource( 6 )]
 
+scale = Vector2( 0.2, 0.2 )
+
 [connection signal="roll_dice" from="HUD" to="." method="roll_dice"]
 
 [connection signal="next_dialogue" from="HUD/Dialogue" to="." method="_on_Dialogue_next_dialogue"]
