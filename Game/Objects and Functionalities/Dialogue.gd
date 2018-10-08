@@ -3,6 +3,7 @@ extends Node
 signal next_dialogue
 var DialogueCount = 1
 var PanelSize
+var dialogData
 
 export(Array, String) var ButtonList #array de cada alternativa
 export(String, MULTILINE) var LabelDialogue = ""  #texto que vai aparecer no painel
@@ -11,6 +12,7 @@ func _ready():
 	PanelSize = Vector2($Panel.margin_right - $Panel.margin_left , $Panel.margin_bottom - $Panel.margin_top)
 	display_choices()
 	display_dialogue()
+	load_json()
 
 #pos representa a posição extrema esqueda do botão
 #a oos valores x e y de pos precisa ser um numero entre 0 a 100 independente das margins do Panel
@@ -43,12 +45,26 @@ func display_choices(button_array = ButtonList, size = Vector2(20, 5), pos = Vec
 						set_pos(Vector2(pos.x, pos.y + 15*i) , size , choice_button)
 					else:
 						set_pos(Vector2(pos.x, pos.y + 15*(i - 3)) , size , choice_button)
+func display_dialogue(dialogue = LabelDialogue):
+	$Panel/RichTextLabel.clear()
+	$Panel/RichTextLabel.text = dialogue
+	
+func _on_Button_pressed():
+	DialogueCount -= 1
+	if DialogueCount == 0:
+		$Panel.hide()
+	else:
+		emit_signal("next_dialogue")
+func _on_choice_button_pressed():
+	$Panel.hide()
+
 #Carrega o json como um dicionario em dialogData
 func load_json():
 	var file = File.new()
 	file.open("res://dialogo.json", File.READ)
 	var dialogData = JSON.parse(file.get_as_text()).result
 	file.close()
+	print(dialogData["dialogo"][1]["text"])
 
 #Retorna o texto do dialogo a ser exibido
 #Input: type: Tipo de dialogo, por enquanto eh "pergunta" ou "dialogo"
