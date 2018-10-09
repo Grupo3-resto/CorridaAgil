@@ -45,7 +45,6 @@ func display_choices(button_array = ButtonList, size = Vector2(20, 5), pos = Vec
 						set_pos(Vector2(pos.x, pos.y + 15*i) , size , choice_button)
 					else:
 						set_pos(Vector2(pos.x, pos.y + 15*(i - 3)) , size , choice_button)
-<<<<<<< HEAD
 
 #recebe texto do painel
 func display_dialogue(dialogue = LabelDialogue):
@@ -53,23 +52,14 @@ func display_dialogue(dialogue = LabelDialogue):
 	$Panel/RichTextLabel.text = dialogue
 
 #botão proximo ou fechar
-=======
-func display_dialogue(dialogue = LabelDialogue):
-	$Panel/RichTextLabel.clear()
-	$Panel/RichTextLabel.text = dialogue
-	
->>>>>>> 4052b81d5ab41ef0a4710e3e145df8ecccc366f4
 func _on_Button_pressed():
 	DialogueCount -= 1
 	if DialogueCount == 0:
 		$Panel.hide()
 	else:
 		emit_signal("next_dialogue")
-<<<<<<< HEAD
 
 #quando uma das alternativas é pressionada
-=======
->>>>>>> 4052b81d5ab41ef0a4710e3e145df8ecccc366f4
 func _on_choice_button_pressed():
 	$Panel.hide()
 
@@ -77,7 +67,7 @@ func _on_choice_button_pressed():
 func load_json():
 	var file = File.new()
 	file.open("res://dialogo.json", File.READ)
-	var dialogData = JSON.parse(file.get_as_text()).result
+	dialogData = JSON.parse(file.get_as_text()).result
 	file.close()
 
 #Retorna o texto do dialogo a ser exibido

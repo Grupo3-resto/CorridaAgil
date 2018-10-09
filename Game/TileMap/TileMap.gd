@@ -1,22 +1,24 @@
-extends TileMap
+extends Node
 
 export (Vector2) var FirstTile
 
-var half_tile_size = get_cell_size() / 2
-var grid = get_used_cells ()  #array de todas as celulas usadas
-var player_tile = grid.find(FirstTile) #guarda o id da celula que o player esta posicionado
+var half_tile_size 
+var grid= []         #array de todas as celulas usadas
+var player_tile      #guarda o id da celula que o player esta posicionado
 var passed_cell = [] #guarda posição das celulas na quais o player ja passou
 var Player 
 
 func get_center(cell):
-	var pos = map_to_world(cell)
+	var pos = $Path.map_to_world(cell)
 	pos.y += half_tile_size.y
 	return pos
 
 
 func _ready():
+	half_tile_size = $Path.get_cell_size() / 2
+	grid = $Path.get_used_cells ()  #array de todas as celulas usadas
+	player_tile = grid.find(FirstTile)
 	Player = get_parent().get_node("Player")
-	FirstTile = Vector2(11, 8)
 	passed_cell.push_back(FirstTile)
 	Player.start(get_center(grid[player_tile]))
 
@@ -97,7 +99,7 @@ func get_first_non_nil(array):
 
 
 func update_player(distance, pos):
-	var cell = world_to_map(pos)
+	var cell = $Path.world_to_map(pos)
 	var path = [cell]
 	var dAux = distance
 	var cellAux
