@@ -238,7 +238,13 @@
 [ext_resource path="res://assets/Isometrics Tiles/isometric-buildings/PNG/buildingTiles_043.png" type="Texture" id=236]
 [ext_resource path="res://assets/Isometrics Tiles/isometric-buildings/PNG/buildingTiles_047.png" type="Texture" id=237]
 
+<<<<<<< HEAD
 [node name="TileSet" type="Node2D"]
+=======
+[node name="TileSet" type="Node2D" index="0"]
+
+editor/display_folded = true
+>>>>>>> 4052b81d5ab41ef0a4710e3e145df8ecccc366f4
 
 [node name="Street_01" type="Sprite" parent="." index="0"]
 

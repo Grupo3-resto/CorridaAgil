@@ -4,7 +4,7 @@
 [ext_resource path="res://TileMap/TileMap.gd" type="Script" id=2]
 [ext_resource path="res://TileMap/Event_List.gd" type="Script" id=3]
 
-[node name="TileMap" type="TileMap" index="0"]
+[node name="TileMap" type="TileMap"]
 
 position = Vector2( -430.594, -9.88715 )
 mode = 1
@@ -23,10 +23,17 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
+<<<<<<< HEAD
 tile_data = PoolIntArray( -131074, 233, 0, -131073, 233, 0, -196608, 233, 0, -196607, 233, 0, -196606, 233, 0, -196605, 233, 0, -196604, 233, 0, -196603, 233, 0, -196602, 233, 0, -196601, 233, 0, -196600, 233, 0, -196599, 233, 0, -196598, 233, 0, -1, 12, 0, -65536, 12, 0, -65535, 12, 0, -65534, 12, 0, -65533, 12, 0, -65532, 12, 0, -65531, 12, 0, -65530, 12, 0, -65529, 12, 0, -65528, 12, 0, -65527, 12, 0, -65526, 12, 0, -65525, 19, 0, 11, 13, 0, 65547, 13, 0, 131083, 13, 0, 196619, 13, 0, 262155, 13, 0, 327691, 13, 0, 393227, 13, 0, 458763, 13, 0, 524299, 13, 0 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Cell", "Collision", "Occluder", "Transform", "Z Index" ]
 FirstTile = Vector2( 0, 0 )
+=======
+tile_data = PoolIntArray( -131074, 233, 0, -131073, 233, 0, -196608, 233, 0, -196607, 233, 0, -196606, 233, 0, -196605, 233, 0, -196604, 233, 0, -196603, 233, 0, -196602, 233, 0, -196601, 233, 0, -196600, 233, 0, -196599, 233, 0, -196598, 233, 0, -1, 12, 0, -65536, 12, 0, -65535, 12, 0, -65534, 12, 0, -65533, 12, 0, -65532, 12, 0, -65531, 12, 0, -65530, 12, 0, -65529, 12, 0, -65528, 12, 0, -65527, 12, 0, -65526, 12, 0, -65525, 19, 0, 11, 13, 0, 65547, 13, 0, 131083, 13, 0, 196619, 13, 0, 262155, 13, 0, 327691, 13, 0, 393227, 13, 0, 458763, 13, 0, 524299, 10, 0 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Cell", "Collision", "Occluder", "Transform", "Z Index" ]
+FirstTile = null
+>>>>>>> 4052b81d5ab41ef0a4710e3e145df8ecccc366f4
 
 [node name="Event_List" type="CanvasLayer" parent="." index="0"]
 
