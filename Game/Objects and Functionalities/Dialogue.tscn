@@ -5,8 +5,6 @@
 [node name="Dialogue" type="Node"]
 
 script = ExtResource( 1 )
-ButtonList = null
-LabelDialogue = ""
 
 [node name="Panel" type="Panel" parent="." index="0"]
 

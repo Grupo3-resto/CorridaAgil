@@ -1,20 +1,21 @@
 {
 	"dialogo":[
 		{
-		"text":"exemplo de texto 1"
+		"text": "Explicar o scrum"
 		}
 		,
 		{
-		"text":"exemplo de texto 2"
+		"text": "Vamos começar"
 		}
 
 	],
 	"pergunta":[
 		{
-			"text": "exemplo de pergunta 1",
+			"text": "Um dos seus desenvolvedores não entendeu a função do dono do produto\n e vc precisa explicar:",
 			"opcoes":[
-				"opcao 1",
-				"opcao 2"
+				"Tem a visão do que a equipe fara",
+				"Liderar a equipe",
+				"Não sei"
 			]
 		}
 	]

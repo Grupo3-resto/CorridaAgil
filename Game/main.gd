@@ -12,10 +12,9 @@ func roll_dice():
 	$TileMap.update_player(distance, $Player.position)
 
 func set_dialogue_list():
-	DialogueList.push_back("Explicar o scrum")
+	DialogueList.push_back($HUD/Dialogue.get_dialog_text("dialogo", 0))
 	$HUD/Dialogue.DialogueCount += 1
-	
-	DialogueList.push_back("Vamos começar")
+	DialogueList.push_back($HUD/Dialogue.get_dialog_text("dialogo", 1))
 	$HUD/Dialogue.DialogueCount += 1
 
 

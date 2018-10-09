@@ -4,9 +4,8 @@ signal next_dialogue
 var DialogueCount = 1
 var PanelSize
 var dialogData
+var number_of_buttons = 0
 
-export(Array, String) var ButtonList #array de cada alternativa
-export(String, MULTILINE) var LabelDialogue = ""  #texto que vai aparecer no painel
 
 func _ready():
 	PanelSize = Vector2($Panel.margin_right - $Panel.margin_left , $Panel.margin_bottom - $Panel.margin_top)
@@ -24,16 +23,24 @@ func set_pos(pos, size, choice_button):
 	choice_button.margin_bottom = choice_button.margin_top + PanelSize.y*(size.y/100)
 
 
+#criar um novo dialogo
+func new_dialogue(button_array, dialogue):
+	display_choices(button_array)
+	display_dialogue(dialogue)
+	$Panel.show()
+
+
 #cria butoes que representam escolhas 
-func display_choices(button_array = ButtonList, size = Vector2(20, 5), pos = Vector2(40, 50)):
+func display_choices(button_array = null, size = Vector2(20, 5), pos = Vector2(40, 50)):
 	if button_array != null :
-		var number_of_buttons = button_array.size()
+		$Panel/Button.hide()
+		number_of_buttons = button_array.size()
 		if number_of_buttons > 6:
 			print("erro!!!: O maximo de butões permitido é 6")
 		else:
 			for i in range(number_of_buttons):
 				var choice_button = Button.new()
-				choice_button.set_name(button_array[i])
+				choice_button.set_name("button" + str(i))
 				$Panel.add_child(choice_button)
 				choice_button.text = button_array[i]
 				choice_button.set_clip_text(true)
@@ -47,7 +54,7 @@ func display_choices(button_array = ButtonList, size = Vector2(20, 5), pos = Vec
 						set_pos(Vector2(pos.x, pos.y + 15*(i - 3)) , size , choice_button)
 
 #recebe texto do painel
-func display_dialogue(dialogue = LabelDialogue):
+func display_dialogue(dialogue = ""):
 	$Panel/RichTextLabel.clear()
 	$Panel/RichTextLabel.text = dialogue
 
@@ -62,6 +69,11 @@ func _on_Button_pressed():
 #quando uma das alternativas é pressionada
 func _on_choice_button_pressed():
 	$Panel.hide()
+	var index = 0
+	while index < number_of_buttons:
+		var tey = ("button" + str(index))
+		get_node("Panel").get_node("button" + str(index)).queue_free()
+		index += 1
 
 #Carrega o json como um dicionario em dialogData
 func load_json():
