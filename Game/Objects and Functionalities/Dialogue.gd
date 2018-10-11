@@ -1,10 +1,12 @@
 extends Node
 
 signal next_dialogue
+signal choice_selected
 var DialogueCount = 1
 var PanelSize
 var dialogData
 var number_of_buttons = 0
+var score = 0
 
 
 func _ready():
@@ -24,14 +26,15 @@ func set_pos(pos, size, choice_button):
 
 
 #criar um novo dialogo
-func new_dialogue(button_array, dialogue):
-	display_choices(button_array)
+func new_dialogue(button_array, dialogue, resposta):
+	display_choices(button_array, resposta)
 	display_dialogue(dialogue)
 	$Panel.show()
 
 
 #cria butoes que representam escolhas 
-func display_choices(button_array = null, size = Vector2(20, 5), pos = Vector2(40, 50)):
+func display_choices(button_array = null, resposta = -1, size = Vector2(20, 5), pos = Vector2(40, 50)):
+	var k
 	if button_array != null :
 		$Panel/Button.hide()
 		number_of_buttons = button_array.size()
@@ -44,14 +47,16 @@ func display_choices(button_array = null, size = Vector2(20, 5), pos = Vector2(4
 				$Panel.add_child(choice_button)
 				choice_button.text = button_array[i]
 				choice_button.set_clip_text(true)
-				choice_button.connect("pressed", self, "_on_choice_button_pressed", [i]) 
+				choice_button.connect("pressed", self, "_on_choice_button_pressed", [i, resposta]) 
 				if number_of_buttons < 4:
-					set_pos(Vector2(pos.x, pos.y + 12*i) , size , choice_button) 
+					set_pos(Vector2(pos.x, pos.y + 12*i) , size , choice_button)
 				else:
 					if i < 3:
 						set_pos(Vector2(pos.x, pos.y + 15*i) , size , choice_button)
 					else:
 						set_pos(Vector2(pos.x, pos.y + 15*(i - 3)) , size , choice_button)
+	#resposta selecionada
+	return k
 
 #recebe texto do painel
 func display_dialogue(dialogue = ""):
@@ -67,14 +72,16 @@ func _on_Button_pressed():
 		emit_signal("next_dialogue")
 
 #quando uma das alternativas é pressionada
-func _on_choice_button_pressed(id):
+func _on_choice_button_pressed(id, resposta):
 	$Panel.hide()
 	var index = 0
 	while index < number_of_buttons:
 		var tey = ("button" + str(index))
 		get_node("Panel").get_node("button" + str(index)).queue_free()
 		index += 1
-	return id
+	if(id == resposta):
+		score += 1
+	
 
 #Carrega o json como um dicionario em dialogData
 func load_json():

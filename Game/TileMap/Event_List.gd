@@ -23,7 +23,7 @@ func _on_Player_has_stopped():
 	match player_tile:
 		Vector2(2,-1), Vector2(3,-1),Vector2(4,-1),Vector2(5,-1):
 			#faz uma pergunta aleatoria e passa para a proxima
-			dialogue.new_dialogue(dialogue.get_question_options(randomIndexArr[questionsAsked])[0], dialogue.get_dialog_text("pergunta", questionsAsked))
+			dialogue.new_dialogue(dialogue.get_question_options(randomIndexArr[questionsAsked])[0], dialogue.get_dialog_text("pergunta", questionsAsked), dialogue.get_question_options(randomIndexArr[questionsAsked])[1])
 			questionsAsked += 1
 		_:   #default
 			pass
