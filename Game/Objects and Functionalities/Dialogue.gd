@@ -44,7 +44,7 @@ func display_choices(button_array = null, size = Vector2(20, 5), pos = Vector2(4
 				$Panel.add_child(choice_button)
 				choice_button.text = button_array[i]
 				choice_button.set_clip_text(true)
-				choice_button.connect("pressed", self, "_on_choice_button_pressed") 
+				choice_button.connect("pressed", self, "_on_choice_button_pressed", [i]) 
 				if number_of_buttons < 4:
 					set_pos(Vector2(pos.x, pos.y + 12*i) , size , choice_button) 
 				else:
@@ -67,13 +67,14 @@ func _on_Button_pressed():
 		emit_signal("next_dialogue")
 
 #quando uma das alternativas é pressionada
-func _on_choice_button_pressed():
+func _on_choice_button_pressed(id):
 	$Panel.hide()
 	var index = 0
 	while index < number_of_buttons:
 		var tey = ("button" + str(index))
 		get_node("Panel").get_node("button" + str(index)).queue_free()
 		index += 1
+	return id
 
 #Carrega o json como um dicionario em dialogData
 func load_json():
@@ -90,4 +91,4 @@ func get_dialog_text(var type, var index):
 
 #Retorna as opcoes da pergunta no indice index
 func get_question_options(var index):
-	return dialogData["pergunta"][index]["opcoes"]
+	return [dialogData["pergunta"][index]["opcoes"], dialogData["pergunta"][index]["correct"]]

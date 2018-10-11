@@ -12,6 +12,7 @@
 	"pergunta":[
 		{
 			"text": "Um dos seus desenvolvedores não entendeu a função do dono do produto\n e vc precisa explicar:",
+			"correct": 0,
 			"opcoes":[
 				"Tem a visão do que a equipe fara",
 				"Liderar a equipe",
