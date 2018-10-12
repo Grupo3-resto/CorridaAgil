@@ -16,7 +16,7 @@ func _ready():
 	PanelSize = Vector2($Panel.margin_right - $Panel.margin_left , $Panel.margin_bottom - $Panel.margin_top)
 	load_json()
 
-
+#insere um novo dialogo na lista de dialogos a serem mostrados
 func insert(TextType, TextIndex):
 	DialogueCount += 1
 	DialogueList.push_back(get_dialog_text(TextType, TextIndex))
@@ -27,7 +27,7 @@ func insert(TextType, TextIndex):
 		ChoiceList.push_back(null)
 		AnswerList.push_back(-1)
 
-
+#mostra dialogos inseridos na lista
 func show_dialogue():
 	if DialogueCount > 0 :
 		$Panel.show()
@@ -35,7 +35,6 @@ func show_dialogue():
 		display_choices(ChoiceList[0], AnswerList[0])
 	else:
 		print("erro!! não existem dialogos na lista")
-
 
 #pos representa a posição extrema esqueda do botão
 #a oos valores x e y de pos precisa ser um numero entre 0 a 100 independente das margins do Panel
@@ -46,12 +45,26 @@ func set_pos(pos, size, choice_button):
 	choice_button.margin_top = PanelSize.y*(pos.y/100)
 	choice_button.margin_bottom = choice_button.margin_top + PanelSize.y*(size.y/100)
 
+
+func set_size(button_array):
+	var BiggerString = 0
+	for i in range(button_array.size()):
+		if button_array[i].length() > BiggerString:
+			BiggerString = button_array[i].length()
+	if BiggerString < 50 and BiggerString > 10: 
+		return Vector2(BiggerString * 2, 5)
+	elif BiggerString > 50:
+		return Vector2(100, 5)
+	else:
+		return Vector2(20, 5)
+
 #cria butoes que representam escolhas 
-func display_choices(button_array = null, resposta = -1, size = Vector2(20, 5), pos = Vector2(40, 50)):
+func display_choices(button_array = null, resposta = -1):
 	var k
 	if button_array != null :
-		$Panel/Button.hide()
+		$Panel/Button.hide() #esconde botão 
 		number_of_buttons = button_array.size()
+		var size = set_size(button_array)
 		if number_of_buttons > 6:
 			print("erro!!!: O maximo de butões permitido é 6")
 		else:
@@ -63,12 +76,12 @@ func display_choices(button_array = null, resposta = -1, size = Vector2(20, 5), 
 				choice_button.set_clip_text(true)
 				choice_button.connect("pressed", self, "_on_choice_button_pressed", [i, resposta]) 
 				if number_of_buttons < 4:
-					set_pos(Vector2(pos.x, pos.y + 12*i) , size , choice_button)
+					set_pos(Vector2((100 - size.x)/2, 50 + 12*i) , size , choice_button)
 				else:
 					if i < 3:
-						set_pos(Vector2(pos.x, pos.y + 15*i) , size , choice_button)
+						set_pos(Vector2((50 - size.x)/2, 50 + 15*i) , size , choice_button)
 					else:
-						set_pos(Vector2(pos.x, pos.y + 15*(i - 3)) , size , choice_button)
+						set_pos(Vector2((50 + (50 - size.x)/2), 50 + 15*(i - 3)) , size , choice_button)
 	#resposta selecionada
 	return k
 
