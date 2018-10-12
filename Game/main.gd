@@ -1,23 +1,12 @@
 extends Node
 
-var DialogueList = []
-
 func _ready():
-	set_dialogue_list()
+	$HUD/Dialogue.insert("dialogo", 0)
+	$HUD/Dialogue.insert("dialogo", 1)
+	$HUD/Dialogue.show_dialogue()
 
 func roll_dice():
 	randomize()
 	var distance = randi()%6 + 1
 	$Dice.show_result(distance, $Player.position)
 	$TileMap.update_player(distance, $Player.position)
-
-func set_dialogue_list():
-	DialogueList.push_back($HUD/Dialogue.get_dialog_text("dialogo", 0))
-	$HUD/Dialogue.DialogueCount += 1
-	DialogueList.push_back($HUD/Dialogue.get_dialog_text("dialogo", 1))
-	$HUD/Dialogue.DialogueCount += 1
-
-
-func _on_Dialogue_next_dialogue():
-	$HUD/Dialogue.display_dialogue(DialogueList[0])
-	DialogueList.pop_front()

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Objects and Functionalities/Dialogue.gd" type="Script" id=1]
 
-[node name="Dialogue" type="Node" index="0"]
+[node name="Dialogue" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -75,6 +75,6 @@ flat = false
 align = 1
 _sections_unfolded = [ "Margin" ]
 
-[connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Panel/Button" to="." method="next_or_end"]
 
 

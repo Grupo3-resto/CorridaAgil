@@ -1,19 +1,41 @@
 extends Node
 
-signal next_dialogue
 signal choice_selected
-var DialogueCount = 1
 var PanelSize
 var dialogData
 var number_of_buttons = 0
 var score = 0
+var DialogueList = [] #uma lista com os textos para cada dialogo 
+var ChoiceList = []   #uma lista com as opções para cada dialogo 
+var AnswerList = []   #uma lista com as respostas de cada dialogo
+var DialogueCount = 0 #o numero de dialogos a serem mostrados em sequencias
 
 
 func _ready():
+	$Panel.hide()
 	PanelSize = Vector2($Panel.margin_right - $Panel.margin_left , $Panel.margin_bottom - $Panel.margin_top)
-	display_choices()
-	display_dialogue()
 	load_json()
+
+
+func insert(TextType, TextIndex):
+	DialogueCount += 1
+	DialogueList.push_back(get_dialog_text(TextType, TextIndex))
+	if TextType == "pergunta":
+		ChoiceList.push_back(get_question_options(TextIndex)[0])
+		AnswerList.push_back(get_question_options(TextIndex)[1])
+	else:
+		ChoiceList.push_back(null)
+		AnswerList.push_back(-1)
+
+
+func show_dialogue():
+	if DialogueCount > 0 :
+		$Panel.show()
+		display_dialogue(DialogueList[0])
+		display_choices(ChoiceList[0], AnswerList[0])
+	else:
+		print("erro!! não existem dialogos na lista")
+
 
 #pos representa a posição extrema esqueda do botão
 #a oos valores x e y de pos precisa ser um numero entre 0 a 100 independente das margins do Panel
@@ -23,14 +45,6 @@ func set_pos(pos, size, choice_button):
 	choice_button.margin_right = choice_button.margin_left + PanelSize.x*(size.x/100)
 	choice_button.margin_top = PanelSize.y*(pos.y/100)
 	choice_button.margin_bottom = choice_button.margin_top + PanelSize.y*(size.y/100)
-
-
-#criar um novo dialogo
-func new_dialogue(button_array, dialogue, resposta):
-	display_choices(button_array, resposta)
-	display_dialogue(dialogue)
-	$Panel.show()
-
 
 #cria butoes que representam escolhas 
 func display_choices(button_array = null, resposta = -1, size = Vector2(20, 5), pos = Vector2(40, 50)):
@@ -63,17 +77,19 @@ func display_dialogue(dialogue = ""):
 	$Panel/RichTextLabel.clear()
 	$Panel/RichTextLabel.text = dialogue
 
-#botão proximo ou fechar
-func _on_Button_pressed():
+#connect com butão proximo ou fechar
+func next_or_end():
 	DialogueCount -= 1
+	DialogueList.pop_front()
+	ChoiceList.pop_front()
+	AnswerList.pop_front()
 	if DialogueCount == 0:
 		$Panel.hide()
 	else:
-		emit_signal("next_dialogue")
+		show_dialogue()
 
 #quando uma das alternativas é pressionada
 func _on_choice_button_pressed(id, resposta):
-	$Panel.hide()
 	var index = 0
 	while index < number_of_buttons:
 		var tey = ("button" + str(index))
@@ -81,7 +97,7 @@ func _on_choice_button_pressed(id, resposta):
 		index += 1
 	if(id == resposta):
 		score += 1
-	
+	next_or_end()
 
 #Carrega o json como um dicionario em dialogData
 func load_json():
@@ -92,10 +108,10 @@ func load_json():
 
 #Retorna o texto do dialogo a ser exibido
 #Input: type: Tipo de dialogo, por enquanto eh "pergunta" ou "dialogo"
-#		index: indice do dialogo no vetor
-func get_dialog_text(var type, var index):
+#index: indice do dialogo no vetor
+func get_dialog_text(type, index):
 	return dialogData[type][index]["text"]
 
 #Retorna as opcoes da pergunta no indice index
-func get_question_options(var index):
+func get_question_options(index):
 	return [dialogData["pergunta"][index]["opcoes"], dialogData["pergunta"][index]["correct"]]

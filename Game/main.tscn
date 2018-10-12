@@ -25,8 +25,6 @@ scale = Vector2( 0.2, 0.2 )
 
 [connection signal="roll_dice" from="HUD" to="." method="roll_dice"]
 
-[connection signal="next_dialogue" from="HUD/Dialogue" to="." method="_on_Dialogue_next_dialogue"]
-
 [connection signal="has_stopped" from="Player" to="TileMap/Event_List" method="_on_Player_has_stopped"]
 
 

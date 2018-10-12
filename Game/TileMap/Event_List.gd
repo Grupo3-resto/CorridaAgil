@@ -1,5 +1,8 @@
 extends CanvasLayer
+
 var questionsAsked = 0
+
+
 
 func shuffleList(list):
     var shuffledList = [] 
@@ -10,8 +13,9 @@ func shuffleList(list):
         indexList.remove(x)
     return shuffledList
 
-func _on_Player_has_stopped():
-	var dialogue = get_parent().get_parent().get_node("HUD").get_node("Dialogue")
+
+func _on_Player_has_stopped(): 
+	var dialogue = get_parent().get_parent().get_node("HUD").get_node("Dialogue") #apenas para não ter que rescrever essa expressão toda hora
 	var pos = get_parent().get_parent().get_node("Player").position
 	var player_tile = get_parent().get_node("Path").world_to_map(pos)
 	var randomIndexArr = []
@@ -23,7 +27,8 @@ func _on_Player_has_stopped():
 	match player_tile:
 		Vector2(2,-1), Vector2(3,-1),Vector2(4,-1),Vector2(5,-1):
 			#faz uma pergunta aleatoria e passa para a proxima
-			dialogue.new_dialogue(dialogue.get_question_options(randomIndexArr[questionsAsked])[0], dialogue.get_dialog_text("pergunta", questionsAsked), dialogue.get_question_options(randomIndexArr[questionsAsked])[1])
+			dialogue.insert("pergunta", 0)
+			dialogue.show_dialogue()
 			questionsAsked += 1
 		_:   #default
 			pass
