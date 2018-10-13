@@ -11,7 +11,7 @@
 	],
 	"pergunta":[
 		{
-			"text": "Sobre a função do dono do produto:",
+			"text": "Sobre a função do dono do produto é correto afirmar que:",
 			"correct": 0,
 			"opcoes":[
 				"Tem a visão do que a equipe fará, produzirá ou realizará",
@@ -25,7 +25,7 @@
 			"correct": 0,
 			"opcoes":[
 				"Não precisam ter uma duração determinada",
-				"Cada sprint tem um objetivo do que é para ser feito",
+				"Cada sprint tem um objetivo para ser concluído",
 				"No fim de uma sprint outra deve começar em seguida"
 			]
 		}
