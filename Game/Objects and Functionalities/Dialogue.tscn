@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Objects and Functionalities/Dialogue.gd" type="Script" id=1]
 
-[node name="Dialogue" type="Node"]
+[node name="Dialogue" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -22,7 +22,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Grow Direction", "Margin" ]
+_sections_unfolded = [ "Margin" ]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel" index="0"]
 

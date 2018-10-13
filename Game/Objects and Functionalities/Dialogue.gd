@@ -52,11 +52,11 @@ func set_size(button_array):
 		if button_array[i].length() > BiggerString:
 			BiggerString = button_array[i].length()
 	if BiggerString < 50 and BiggerString > 10: 
-		return Vector2(BiggerString * 2, 5)
+		return Vector2(BiggerString * 2, 10)
 	elif BiggerString > 50:
-		return Vector2(96, 5)
+		return Vector2(96, 15)
 	else:
-		return Vector2(20, 5)
+		return Vector2(20, 15)
 
 #cria butoes que representam escolhas 
 func display_choices(button_array = null, resposta = -1):
@@ -76,12 +76,12 @@ func display_choices(button_array = null, resposta = -1):
 				choice_button.set_clip_text(true)
 				choice_button.connect("pressed", self, "_on_choice_button_pressed", [i, resposta]) 
 				if number_of_buttons < 4:
-					set_pos(Vector2((100 - size.x)/2, 50 + 12*i) , size , choice_button)
+					set_pos(Vector2((100 - size.x)/2, 45 + 18*i) , size , choice_button)
 				else:
 					if i < 3:
-						set_pos(Vector2((50 - size.x)/2, 50 + 15*i) , size , choice_button)
+						set_pos(Vector2((50 - size.x)/2, 45 + 18*i) , size , choice_button)
 					else:
-						set_pos(Vector2((50 + (50 - size.x)/2), 50 + 15*(i - 3)) , size , choice_button)
+						set_pos(Vector2((50 + (50 - size.x)/2), 45 + 18*(i - 3)) , size , choice_button)
 	#resposta selecionada
 	return k
 
