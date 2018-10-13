@@ -4,10 +4,13 @@
 [ext_resource path="res://TileMap/Event_List.gd" type="Script" id=2]
 [ext_resource path="res://TileMap/teste.tres" type="TileSet" id=3]
 
-[node name="TileMap" type="Node"]
+[node name="TileMap" type="Node" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Cell", "Collision", "Occluder", "Transform", "Z Index" ]
+__meta__ = {
+"_edit_vertical_guides_": [ -116.0 ]
+}
 FirstTile = Vector2( -1, -1 )
 
 [node name="Event_List" type="CanvasLayer" parent="." index="0"]
@@ -37,7 +40,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -1, 12, 0, -65536, 12, 0, -65535, 12, 0, -65534, 12, 0, -65533, 12, 0, -65532, 12, 0, -65531, 12, 0, -65530, 12, 0, -65529, 12, 0, -65528, 12, 0, -65527, 12, 0, -65526, 12, 0, -65525, 12, 0, -65524, 19, 0, 12, 13, 0, 65548, 13, 0, 131084, 13, 0, 196620, 13, 0, 262156, 13, 0, 327692, 13, 0, 393228, 13, 0, 458764, 13, 0, 524300, 13, 0, 589836, 13, 0, 655372, 13, 0 )
+tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 19, 0, 12, 1, 0, 65548, 1, 0, 131084, 1, 0, 196620, 1, 0, 262156, 1, 0, 327692, 1, 0, 393228, 1, 0, 458764, 1, 0, 524300, 1, 0 )
 _sections_unfolded = [ "Cell" ]
 
 

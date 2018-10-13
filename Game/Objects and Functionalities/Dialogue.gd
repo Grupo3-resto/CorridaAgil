@@ -54,7 +54,7 @@ func set_size(button_array):
 	if BiggerString < 50 and BiggerString > 10: 
 		return Vector2(BiggerString * 2, 5)
 	elif BiggerString > 50:
-		return Vector2(100, 5)
+		return Vector2(96, 5)
 	else:
 		return Vector2(20, 5)
 

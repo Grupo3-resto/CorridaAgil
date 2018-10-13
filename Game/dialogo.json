@@ -11,12 +11,52 @@
 	],
 	"pergunta":[
 		{
-			"text": "Um dos seus desenvolvedores não entendeu a função do dono do produto\n e vc precisa explicar:",
+			"text": "Sobre a função do dono do produto:",
 			"correct": 0,
 			"opcoes":[
-				"Tem a visão do que a equipe fara",
+				"Tem a visão do que a equipe fará, produzirá ou realizará",
 				"Liderar a equipe",
-				"Não sei"
+				"Remover os obstaculos que podem atrabalhar o sprint"
+			]
+		}
+		,
+		{
+			"text": "Sobre as sprints é errado afirmar que:",
+			"correct": 0,
+			"opcoes":[
+				"Não precisam ter uma duração determinada",
+				"Cada sprint tem um objetivo do que é para ser feito",
+				"No fim de uma sprint outra deve começar em seguida"
+			]
+		}
+		,
+		{
+			"text": "Com que frequência é recomendada a reunião Scrum?",
+			"correct": 0,
+			"opcoes":[
+				"Diária",
+				"Semanal",
+				"A cada 15 dias"
+			]
+		}
+		,
+		{
+			"text": "Qual destes não é um dos objetivos da reunião Scrum?",
+			"correct": 0,
+			"opcoes":[
+				" Discutir as próximas tarefas detalhadamente",
+				"Revisar o que foi feito no dia anterior",
+				"Discutir possíveis impedimentos para a corrida"
+			]
+		}
+		,
+		{
+			"text": "Sobre o backlog do produto, escolha a alternativa ERRADA::",
+			"correct": 0,
+			"opcoes":[
+				"Só o dono do produto pode vê-lo",
+				"Ele é uma lista de requerimentos do produto",
+				"Ele só pode ser modificado pelo dono do produto."
 			]
 		}
 	]
