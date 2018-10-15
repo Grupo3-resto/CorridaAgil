@@ -15,21 +15,16 @@ func shuffleList(list):
 
 
 func _on_Player_has_stopped(): 
-	var dialogue = get_parent().get_parent().get_node("HUD").get_node("Dialogue") #apenas para não ter que rescrever essa expressão toda hora
-	var pos = get_parent().get_parent().get_node("Player").position
-	var player_tile = get_parent().get_node("Path").world_to_map(pos)
+	var dialogue = get_parent().get_parent().get_node("HUD").get_node("Dialogue")
 	var randomIndexArr = []
 	#Cria um array com todos os indices das perguntas
 	for i in range(dialogue.dialogData["pergunta"].size()):
 		randomIndexArr.push_back(i)
 	#randomiza os indices
-	randomIndexArr = shuffleList(randomIndexArr)
-	match player_tile:
-		Vector2(2,-1), Vector2(3,-1),Vector2(4,-1),Vector2(5,-1):
-			#faz uma pergunta aleatoria e passa para a proxima
-			dialogue.insert("pergunta", questionsAsked)
-			dialogue.show_dialogue()
-			questionsAsked += 1
-		_:   #default
-			pass
+	randomIndexArr = shuffleList(randomIndexArr) #DEFEITO: Aparece mesma pergunta mais de uma vez
+	#mostra dialogo
+	dialogue.insert("pergunta", questionsAsked) #LEMBRETE: usar questionAsked apenas provisoriamente
+	dialogue.show_dialogue()
+	if questionsAsked < (dialogue.dialogData["pergunta"].size() - 1):
+		questionsAsked += 1 
 

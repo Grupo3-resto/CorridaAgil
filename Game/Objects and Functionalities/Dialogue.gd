@@ -5,10 +5,10 @@ var PanelSize
 var dialogData
 var number_of_buttons = 0
 var score = 0
-var DialogueList = [] #uma lista com os textos para cada dialogo 
-var ChoiceList = []   #uma lista com as opções para cada dialogo 
-var AnswerList = []   #uma lista com as respostas de cada dialogo
-var DialogueCount = 0 #o numero de dialogos a serem mostrados em sequencias
+var DialogueList = [] #Uma lista com os textos para cada dialogo 
+var ChoiceList = []   #Uma lista com as opções para cada dialogo 
+var AnswerList = []   #Uma lista com as respostas de cada dialogo
+var DialogueCount = 0 #O numero de dialogos a serem mostrados em sequencias
 
 
 func _ready():
@@ -51,20 +51,17 @@ func set_size(button_array):
 	for i in range(button_array.size()):
 		if button_array[i].length() > BiggerString:
 			BiggerString = button_array[i].length()
-	if BiggerString < 50 and BiggerString > 10: 
-		return Vector2(BiggerString * 2, 10)
-	elif BiggerString > 50:
-		return Vector2(96, 15)
+	if BiggerString < 48: 
+		return Vector2(BiggerString * 2, 15)
 	else:
-		return Vector2(20, 15)
+		return Vector2(96, 15)
 
 #cria butoes que representam escolhas 
 func display_choices(button_array = null, resposta = -1):
-	var k
 	if button_array != null :
 		$Panel/Button.hide() #esconde botão 
 		number_of_buttons = button_array.size()
-		var size = set_size(button_array)
+		var size = set_size(button_array) #defini o tamanho dos botões 
 		if number_of_buttons > 6:
 			print("erro!!!: O maximo de butões permitido é 6")
 		else:
@@ -75,15 +72,15 @@ func display_choices(button_array = null, resposta = -1):
 				choice_button.text = button_array[i]
 				choice_button.set_clip_text(true)
 				choice_button.connect("pressed", self, "_on_choice_button_pressed", [i, resposta]) 
+				#posiciona cada botão dependendo do numero de botões 
 				if number_of_buttons < 4:
 					set_pos(Vector2((100 - size.x)/2, 45 + 18*i) , size , choice_button)
 				else:
 					if i < 3:
-						set_pos(Vector2((50 - size.x)/2, 45 + 18*i) , size , choice_button)
+						set_pos(Vector2((50 - size.x)/2, 45 + 18*i) , size/2 , choice_button)
 					else:
-						set_pos(Vector2((50 + (50 - size.x)/2), 45 + 18*(i - 3)) , size , choice_button)
-	#resposta selecionada
-	return k
+						set_pos(Vector2((50 + (50 - size.x)/2), 45 + 18*(i - 3)) , size/2 , choice_button)
+
 
 #recebe texto do painel
 func display_dialogue(dialogue = ""):
