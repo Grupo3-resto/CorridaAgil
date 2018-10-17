@@ -1,6 +1,7 @@
 extends Node
 
 signal choice_selected
+signal dialogue_end
 var PanelSize
 var dialogData
 var number_of_buttons = 0
@@ -17,12 +18,12 @@ func _ready():
 	load_json()
 
 #insere um novo dialogo na lista de dialogos a serem mostrados
-func insert(TextType, TextIndex):
+func insert(type, index):
 	DialogueCount += 1
-	DialogueList.push_back(get_dialog_text(TextType, TextIndex))
-	if TextType == "pergunta":
-		ChoiceList.push_back(get_question_options(TextIndex)[0])
-		AnswerList.push_back(get_question_options(TextIndex)[1])
+	DialogueList.push_back(get_dialog_text(type, index))
+	if type == "pergunta":
+		ChoiceList.push_back(get_question_options(index)[0])
+		AnswerList.push_back(get_question_options(index)[1])
 	else:
 		ChoiceList.push_back(null)
 		AnswerList.push_back(-1)
@@ -95,6 +96,7 @@ func next_or_end():
 	AnswerList.pop_front()
 	if DialogueCount == 0:
 		$Panel.hide()
+		emit_signal("dialogue_end")
 	else:
 		show_dialogue()
 

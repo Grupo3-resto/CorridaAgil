@@ -8,7 +8,6 @@
 [ext_resource path="res://assets/dice/dieRed5.png" type="Texture" id=6]
 [ext_resource path="res://assets/dice/dieRed6.png" type="Texture" id=7]
 
-
 [node name="Dice" type="Node2D"]
 
 position = Vector2( 962.772, 240.693 )

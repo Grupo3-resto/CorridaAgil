@@ -1,0 +1,12 @@
+{
+    "positive":[
+        {
+            "text": "test positive event"
+        }
+    ],  
+    "negative":[
+        {
+            "text": "test negative event"
+        }
+    ]
+}

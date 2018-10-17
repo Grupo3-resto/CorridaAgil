@@ -16,6 +16,7 @@ func shuffleList(list):
 
 func _on_Player_has_stopped(): 
 	var dialogue = get_parent().get_parent().get_node("HUD").get_node("Dialogue")
+	var event = get_parent().get_parent().get_node("HUD").get_node("Event_Cards")
 	var randomIndexArr = []
 	#Cria um array com todos os indices das perguntas
 	for i in range(dialogue.dialogData["pergunta"].size()):
@@ -25,6 +26,10 @@ func _on_Player_has_stopped():
 	#mostra dialogo
 	dialogue.insert("pergunta", questionsAsked) #LEMBRETE: usar questionAsked apenas provisoriamente
 	dialogue.show_dialogue()
+	yield(dialogue, "dialogue_end")
+	event.insert("positive", 0)
+	event.show_event()
+	yield(event, "event_end")
 	if questionsAsked < (dialogue.dialogData["pergunta"].size() - 1):
 		questionsAsked += 1 
 
