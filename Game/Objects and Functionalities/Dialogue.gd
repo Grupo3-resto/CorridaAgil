@@ -5,7 +5,6 @@ signal dialogue_end
 var PanelSize
 var dialogData
 var number_of_buttons = 0
-var score = 0
 var DialogueList = [] #Uma lista com os textos para cada dialogo 
 var ChoiceList = []   #Uma lista com as opções para cada dialogo 
 var AnswerList = []   #Uma lista com as respostas de cada dialogo
@@ -108,7 +107,8 @@ func _on_choice_button_pressed(id, resposta):
 		get_node("Panel").get_node("button" + str(index)).queue_free()
 		index += 1
 	if(id == resposta):
-		score += 1
+		get_node("/root/main/HUD/Score").score += 1
+		get_node("/root/main/HUD/Score").update_score()
 	next_or_end()
 
 #Carrega o json como um dicionario em dialogData

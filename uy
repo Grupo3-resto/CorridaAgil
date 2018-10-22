@@ -1,0 +1,96 @@
+[33mcommit f9f2839ebc8b56068f625a6cc22197430cbba21a[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: João Marcos Mororo Costa <43460229+mororo250@users.noreply.github.com>
+Date:   Fri Oct 5 02:50:42 2018 -0300
+
+    Tiles mais organizados
+
+[33mcommit 41e813110c6b7290afa8794717bed0784488559f[m
+Author: João Marcos Mororo Costa <43460229+mororo250@users.noreply.github.com>
+Date:   Sat Sep 29 13:07:46 2018 -0300
+
+    agora player é filha da main.scene e adicionei os isometric tiles para a pasta assets
+
+[33mcommit 38ccf58d4d2b1be1b9bb3b1c3d2bae5d6df06b0d[m
+Author: João Marcos <joao_marcos_8@hotmail.com>
+Date:   Thu Sep 27 23:17:37 2018 -0300
+
+    pequenas modificações
+
+[33mcommit f490ab79124392ae90ae636909f220ac6bb3eb39[m
+Merge: 9e06cb9 b20c73e
+Author: João Marcos <joao_marcos_8@hotmail.com>
+Date:   Thu Sep 27 21:24:08 2018 -0300
+
+    Merge branch 'master' of https://github.com/Grupo3-resto/CorridaAgil
+
+[33mcommit 9e06cb99ac1f04930407b4aeec27b239e9262230[m
+Author: João Marcos <joao_marcos_8@hotmail.com>
+Date:   Thu Sep 27 21:16:25 2018 -0300
+
+    apresentação
+
+[33mcommit b20c73e8c007e0686e11b84337d6f63c0b7b9f00[m
+Author: João Marcos <joao_marcos_8@hotmail.com>
+Date:   Thu Sep 27 21:16:25 2018 -0300
+
+    mais uma tentativa
+
+[33mcommit 8c690c8a9200bb22b65217d955caa9df17413649[m
+Author: Estevão Coelho <estevaokiel@gmail.com>
+Date:   Sun Sep 23 19:42:58 2018 -0300
+
+    Pra rodar no mac
+
+[33mcommit 0af51be948b0247b58a003e69c52bc5d07d0e1c0[m
+Author: João Marcos <joao_marcos_8@hotmail.com>
+Date:   Sun Sep 23 16:35:32 2018 -0300
+
+    agora o character se movimenta apenas sobre tile validos
+
+[33mcommit c63147b0d8c6fbb9d0aff5142b77f3f9cfc8311f[m
+Author: João Marcos <joao_marcos_8@hotmail.com>
+Date:   Sun Sep 23 12:34:11 2018 -0300
+
+    melhoria na movimentação/ obs: ainda falta concertar o caminho que o player faz para chegar em uma determinada celula
+
+[33mcommit 9bed5aba196d6306d31870805e269a2bb32353e2[m
+Author: João Marcos <joao_marcos_8@hotmail.com>
+Date:   Sat Sep 22 19:27:47 2018 -0300
+
+    add dice
+
+[33mcommit 554c67817a27f380d3587370ed7a5913473984f9[m
+Author: João Marcos <joao_marcos_8@hotmail.com>
+Date:   Sat Sep 22 17:02:27 2018 -0300
+
+    Tile Map
+
+[33mcommit dfa27be799c5bd72efe1d8cef94fdd3f2996a032[m
+Author: João Marcos <joao_marcos_8@hotmail.com>
+Date:   Sat Sep 22 03:03:19 2018 -0300
+
+    Add camera
+
+[33mcommit 723c3feb2391f767ea7b87ce4d18fbbb8ef7e3b8[m
+Author: João Marcos <joao_marcos_8@hotmail.com>
+Date:   Fri Sep 21 23:41:51 2018 -0300
+
+    Fix target movememt
+
+[33mcommit 4dbb42e352f0e1a3edf5f442784f3561ffc935eb[m
+Author: João Marcos <joao_marcos_8@hotmail.com>
+Date:   Fri Sep 21 20:03:41 2018 -0300
+
+    Target Moviment
+
+[33mcommit 3ccd5f31260cd059a1aa824d0b2d2af3d849ed2c[m
+Author: João Marcos <joao_marcos_8@hotmail.com>
+Date:   Fri Sep 21 17:47:33 2018 -0300
+
+    starting the project
+
+[33mcommit 523742163f5cf9d8f66a615ba5d42f55bd94cd3f[m
+Author: João Marcos Mororo Costa <43460229+mororo250@users.noreply.github.com>
+Date:   Fri Sep 21 17:25:38 2018 -0300
+
+    Initial commit
