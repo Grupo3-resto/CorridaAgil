@@ -22,6 +22,7 @@ func _on_Player_has_stopped():
 				event.insert("positive", 0)
 				event.show_event()
 				yield(event, "event_end")
+				eventState = INACTIVE
 			_:
 				t.start()
 				yield(t, "timeout")
@@ -31,7 +32,6 @@ func _on_Player_has_stopped():
 				yield(dialogue, "dialogue_end")
 				if questionsAsked < (dialogue.dialogData["pergunta"].size() - 1):
 					questionsAsked += 1 
-				eventState = INACTIVE
 		t.queue_free()
 	else:
 		eventState = ACTIVE

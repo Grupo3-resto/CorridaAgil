@@ -57,8 +57,8 @@ func change_direction(dir):
 
 #chama a função change_direction() e recebe a proxima celula como default
 func test_direction():
-	if get_parent().get_node("TileMap").ssize(get_parent().get_node("TileMap").search_for_neighbors()) == 1:
-		var dir = get_parent().get_node("TileMap").search_for_neighbors()[get_parent().get_node("TileMap").get_first_non_nil(get_parent().get_node("TileMap").search_for_neighbors())] - get_parent().get_node("TileMap/Path").world_to_map(position)
+	if get_node("/root/main/TileMap").ssize(get_node("/root/main/TileMap").search_for_neighbors()) == 1:
+		var dir = get_node("/root/main/TileMap").search_for_neighbors()[get_node("/root/main/TileMap").get_first_non_nil(get_node("/root/main/TileMap").search_for_neighbors())] - get_parent().get_node("TileMap/Path").world_to_map(position)
 		if dir.x != 0 and dir.y == 0:
 			if playerDirection == DOWN or playerDirection == UP:
 				if dir.x < 0:
