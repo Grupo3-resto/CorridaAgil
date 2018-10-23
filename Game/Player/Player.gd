@@ -3,6 +3,7 @@ extends Node2D
 signal has_stopped
 export (int) var speed = 200
 
+enum Direction {RIGHT, DOWN, LEFT, UP}
 var target = Vector2()
 var velocity = Vector2()
 var path = []
