@@ -3,7 +3,6 @@ extends CanvasLayer
 var questionsAsked = 0
 
 
-
 func shuffleList(list):
     var shuffledList = [] 
     var indexList = range(list.size())
@@ -27,9 +26,9 @@ func _on_Player_has_stopped():
 	dialogue.insert("pergunta", questionsAsked) #LEMBRETE: usar questionAsked apenas provisoriamente
 	dialogue.show_dialogue()
 	yield(dialogue, "dialogue_end")
-	event.insert("positive", 0)
-	event.show_event()
-	yield(event, "event_end")
+	#event.insert("positive", 0)
+	#event.show_event()
+	#yield(event, "event_end")
 	if questionsAsked < (dialogue.dialogData["pergunta"].size() - 1):
 		questionsAsked += 1 
 

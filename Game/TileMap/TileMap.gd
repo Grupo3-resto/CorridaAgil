@@ -9,14 +9,14 @@ var player_tile      #guarda o id da celula que o player esta posicionado
 var passed_cell = [] #guarda posição das celulas na quais o player ja passou
 var Player 
 
-# coloca na array de todas as celulas que o player pode passar
+
 func get_center(cell):
 	var pos = $Path.map_to_world(cell)
 	pos.y += half_tile_size.y
 	return pos
 
-
-func mark_path():
+# coloca na array de todas as celulas que o player pode passar
+func push_path():
 	if PassablePaths != null:
 		for i in PassablePaths:
 			grid += $Path.get_used_cells_by_id(i)
@@ -24,14 +24,14 @@ func mark_path():
 
 func _ready():
 	half_tile_size = $Path.get_cell_size() / 2
-	mark_path()
+	push_path()
 	player_tile = grid.find(FirstTile)
 	Player = get_parent().get_node("Player")
 	passed_cell.push_back(FirstTile)
 	Player.start(get_center(grid[player_tile]))
 
 
-func search_for_neighbors(cell):
+func search_for_neighbors(cell = grid[player_tile]):
 	var aux = cell
 	var neighbors = [null, null, null, null]
 	
@@ -109,8 +109,10 @@ func ssize(array):
 
 func get_first_non_nil(array):
 	var ret = 0
-	while(array[ret] == null):
+	while array[ret] == null:
 		ret += 1
+		if ret == array.size(): 
+			return null
 	return ret
 
 
