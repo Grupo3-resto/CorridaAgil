@@ -5,6 +5,7 @@ signal event_end
 var eventData
 var eventList = []
 var eventCount = 0
+var effects = []
 
 func _ready():
 	load_json()
@@ -26,6 +27,7 @@ func event_end():
 	if eventCount == 0:
 		$Event.hide()
 		emit_signal("event_end")
+		apply_effects()
 	else:
 		show_event()
 
@@ -38,4 +40,18 @@ func load_json():
 
 
 func get_event(type, index):
+	set_effects(type, index)
 	return eventData[type][index]["text"]
+	
+func set_effects(type, index):
+	#Indices:
+	#	0: Andar x Casas
+	#	1: Pontos
+	#	2: Bla Bla Bla
+	effects = eventData[type][index]["effect"]
+	
+func apply_effects():
+	if(effects[0] != 0):
+		get_node("/root/main/TileMap").move(effects[0])
+	if(effects[1] != 0):
+		get_node("/root/main/HUD/Score").score += effects[1]
