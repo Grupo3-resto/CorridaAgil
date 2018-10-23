@@ -1,10 +1,12 @@
 {
 	"dialogo":[
 		{
+			"effect": [1, 1, 1],
 			"text": "Explicar o scrum"
 		}
 		,
 		{
+			"effect": [0, 1, 1],
 			"text": "Vamos começar"
 		}
 
@@ -13,6 +15,8 @@
 		{
 			"text": "Sobre a função do dono do produto é correto afirmar que:",
 			"correct": 0,
+			"_comment": "Se o valor for 0 em algum membro de effect a casa nao tem o efeito designado para aquele indice. O valor no indice indica a intensidade do efeito. Caso queira adicionar novos efeitos basta adicionar um elemento aos vetores e editar o comentario no codigo do getter get_effects() especificando a adicao",
+			"effect": [1, 1, 1],
 			"opcoes":[
 				"Tem a visão do que a equipe fará, produzirá ou realizará",
 				"Liderar a equipe",
@@ -23,6 +27,7 @@
 		{
 			"text": "Sobre as sprints é errado afirmar que:",
 			"correct": 0,
+			"effect": [1, 1, 1],
 			"opcoes":[
 				"Não precisam ter uma duração determinada",
 				"Cada sprint tem um objetivo para ser concluído",
@@ -33,6 +38,8 @@
 		{
 			"text": "Com que frequência é recomendada a reunião Scrum?",
 			"correct": 0,
+
+			"effect": [1, 1, 1],
 			"opcoes":[
 				"Diária",
 				"Semanal",
@@ -43,6 +50,7 @@
 		{
 			"text": "Qual destes não é um dos objetivos da reunião Scrum?",
 			"correct": 0,
+			"effect": [1, 1, 1],
 			"opcoes":[
 				" Discutir as próximas tarefas detalhadamente",
 				"Revisar o que foi feito no dia anterior",
@@ -53,6 +61,7 @@
 		{
 			"text": "Sobre o backlog do produto, escolha a alternativa ERRADA::",
 			"correct": 0,
+			"effect": [1, 1, 1],
 			"opcoes":[
 				"Só o dono do produto pode vê-lo",
 				"Ele é uma lista de requerimentos do produto",

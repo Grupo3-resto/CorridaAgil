@@ -9,7 +9,7 @@ var DialogueList = [] #Uma lista com os textos para cada dialogo
 var ChoiceList = []   #Uma lista com as opções para cada dialogo 
 var AnswerList = []   #Uma lista com as respostas de cada dialogo
 var DialogueCount = 0 #O numero de dialogos a serem mostrados em sequencias
-
+var effects = [] #proximos efeitos a serem aplicados
 
 func _ready():
 	$Panel.hide()
@@ -20,6 +20,7 @@ func _ready():
 func insert(type, index):
 	DialogueCount += 1
 	DialogueList.push_back(get_dialog_text(type, index))
+	set_effects(type, index)
 	if type == "pergunta":
 		ChoiceList.push_back(get_question_options(index)[0])
 		AnswerList.push_back(get_question_options(index)[1])
@@ -74,6 +75,7 @@ func display_choices(button_array = null, resposta = -1):
 				choice_button.connect("pressed", self, "_on_choice_button_pressed", [i, resposta]) 
 				#posiciona cada botão dependendo do numero de botões 
 				if number_of_buttons < 4:
+					
 					set_pos(Vector2((100 - size.x)/2, 45 + 18*i) , size , choice_button)
 				else:
 					if i < 3:
@@ -98,6 +100,8 @@ func next_or_end():
 		emit_signal("dialogue_end")
 	else:
 		show_dialogue()
+	apply_effects()
+	
 
 #quando uma das alternativas é pressionada
 func _on_choice_button_pressed(id, resposta):
@@ -127,3 +131,17 @@ func get_dialog_text(type, index):
 #Retorna as opcoes da pergunta no indice index
 func get_question_options(index):
 	return [dialogData["pergunta"][index]["opcoes"], dialogData["pergunta"][index]["correct"]]
+
+func set_effects(type, index):
+	#Indices:
+	#	0: Andar x Casas
+	#	1: Pontos
+	#	2: Bla Bla Bla
+	#
+	effects = dialogData[type][index]["effect"]
+	
+func apply_effects():
+	if(effects[0] != 0):
+		get_parent().get_parent().get_node("TileMap").move(effects[0])
+	if(effects[1] != 0):
+		get_node("/root/main/HUD/Score").score += effects[1]

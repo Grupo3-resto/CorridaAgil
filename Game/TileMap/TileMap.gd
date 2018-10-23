@@ -53,6 +53,14 @@ func search_for_neighbors(cell):
 	
 	return neighbors
 
+func move(spaces):
+	if(spaces > 0):
+		update_player(spaces, get_parent().get_node("Player").position)
+	else:
+		var path = [$Path.world_to_map(get_parent().get_node("Player").position)]
+		for i in range(abs(spaces)):
+			path.push_back(passed_cell.pop_back())
+		update_player_path(path)
 
 func update_player_path(path):
 	var teste = path.back()
