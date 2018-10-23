@@ -1,12 +1,62 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/Isometrics Tiles/isometric-vehicles/PNG/Civilian/Blue/Pick-up 1/carBlue1_003.png" type="Texture" id=2]
+[ext_resource path="res://assets/Isometrics Tiles/isometric-vehicles/PNG/Civilian/Blue/Pick-up 1/carBlue1_009.png" type="Texture" id=3]
+[ext_resource path="res://assets/Isometrics Tiles/isometric-vehicles/PNG/Civilian/Blue/Pick-up 1/carBlue1_008.png" type="Texture" id=4]
+[ext_resource path="res://assets/Isometrics Tiles/isometric-vehicles/PNG/Civilian/Blue/Pick-up 1/carBlue1_002.png" type="Texture" id=5]
+[ext_resource path="res://assets/Isometrics Tiles/isometric-vehicles/PNG/Civilian/Blue/Pick-up 1/carBlue1_001.png" type="Texture" id=6]
+[ext_resource path="res://assets/Isometrics Tiles/isometric-vehicles/PNG/Civilian/Blue/Pick-up 1/carBlue1_006.png" type="Texture" id=7]
+[ext_resource path="res://assets/Isometrics Tiles/isometric-vehicles/PNG/Civilian/Blue/Pick-up 1/carBlue1_007.png" type="Texture" id=8]
+[ext_resource path="res://assets/Isometrics Tiles/isometric-vehicles/PNG/Civilian/Blue/Pick-up 1/carBlue1_012.png" type="Texture" id=9]
 
-[node name="Player" type="Node2D"]
+[sub_resource type="SpriteFrames" id=1]
 
-position = Vector2( 30, 30 )
-scale = Vector2( 0.5, 0.5 )
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "up-right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "up-left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "left-down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "left-up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "right-up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "down-right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 9 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "right-down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "down-left",
+"speed": 5.0
+} ]
+
+[node name="Player" type="Node2D" index="0"]
+
+position = Vector2( 39.1861, 32.7018 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
@@ -14,19 +64,12 @@ __meta__ = {
 }
 speed = 200
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
-position = Vector2( 4.41064, 6.10352e-005 )
-rotation = 0.00337806
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Animation", "Offset", "Transform" ]
-
-[node name="Camera2D" type="Camera2D" parent="." index="1"]
+[node name="Camera2D" type="Camera2D" parent="." index="0"]
 
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 1, 1 )
+zoom = Vector2( 0.7, 0.7 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
@@ -45,6 +88,11 @@ drag_margin_bottom = 0.15
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-_sections_unfolded = [ "Drag Margin", "Limit", "Offset", "Smoothing" ]
+_sections_unfolded = [ "Drag Margin", "Offset", "Smoothing" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
+
+frames = SubResource( 1 )
+animation = "right-up"
 
 
