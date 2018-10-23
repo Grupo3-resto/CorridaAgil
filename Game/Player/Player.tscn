@@ -4,8 +4,8 @@
 [ext_resource path="res://assets/Isometrics Tiles/isometric-vehicles/PNG/Civilian/Blue/Pick-up 1/carBlue1_008.png" type="Texture" id=2]
 [ext_resource path="res://assets/Isometrics Tiles/isometric-vehicles/PNG/Civilian/Blue/Pick-up 1/carBlue1_012.png" type="Texture" id=3]
 [ext_resource path="res://assets/Isometrics Tiles/isometric-vehicles/PNG/Civilian/Blue/Pick-up 1/carBlue1_007.png" type="Texture" id=4]
-[ext_resource path="res://assets/Isometrics Tiles/isometric-vehicles/PNG/Civilian/Blue/Pick-up 1/carBlue1_006.png" type="Texture" id=5]
-[ext_resource path="res://assets/Isometrics Tiles/isometric-vehicles/PNG/Civilian/Blue/Pick-up 1/carBlue1_001.png" type="Texture" id=6]
+[ext_resource path="res://assets/Isometrics Tiles/isometric-vehicles/PNG/Civilian/Blue/Pick-up 1/carBlue1_001.png" type="Texture" id=5]
+[ext_resource path="res://assets/Isometrics Tiles/isometric-vehicles/PNG/Civilian/Blue/Pick-up 1/carBlue1_006.png" type="Texture" id=6]
 [ext_resource path="res://assets/Isometrics Tiles/isometric-vehicles/PNG/Civilian/Blue/Pick-up 1/carBlue1_003.png" type="Texture" id=7]
 [ext_resource path="res://assets/Isometrics Tiles/isometric-vehicles/PNG/Civilian/Blue/Pick-up 1/carBlue1_009.png" type="Texture" id=8]
 [ext_resource path="res://assets/Isometrics Tiles/isometric-vehicles/PNG/Civilian/Blue/Pick-up 1/carBlue1_002.png" type="Texture" id=9]
@@ -16,45 +16,45 @@ animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": false,
 "name": "right-down",
-"speed": 5.0
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "left-down",
+"speed": 15.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
-"loop": true,
+"loop": false,
 "name": "down-right",
-"speed": 0.25
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "down-left",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 2 ) ],
-"loop": true,
+"loop": false,
 "name": "up-right",
-"speed": 5.0
+"speed": 15.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 9 ), ExtResource( 6 ) ],
-"loop": true,
+"frames": [ ExtResource( 7 ), ExtResource( 9 ), ExtResource( 5 ) ],
+"loop": false,
 "name": "up-left",
-"speed": 5.0
+"speed": 15.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 7 ) ],
-"loop": true,
+"frames": [ ExtResource( 5 ), ExtResource( 9 ), ExtResource( 7 ) ],
+"loop": false,
 "name": "left-up",
-"speed": 5.0
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "down-left",
+"speed": 15.0
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 8 ), ExtResource( 7 ) ],
-"loop": true,
+"loop": false,
 "name": "right-up",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "left-down",
-"speed": 5.0
+"speed": 15.0
 } ]
 
-[node name="Player" type="Node2D" index="0"]
+[node name="Player" type="Node2D"]
 
 position = Vector2( 39.1861, 32.7018 )
 script = ExtResource( 1 )

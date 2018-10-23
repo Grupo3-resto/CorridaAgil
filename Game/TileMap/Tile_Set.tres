@@ -677,7 +677,7 @@
 58/shapes = [  ]
 59/name = "Grass_60"
 59/texture = ExtResource( 98 )
-59/tex_offset = Vector2( 0, 0 )
+59/tex_offset = Vector2( 0, -12 )
 59/modulate = Color( 1, 1, 1, 1 )
 59/region = Rect2( 0, 0, 132, 113 )
 59/is_autotile = false
@@ -1064,7 +1064,7 @@
 101/shapes = [  ]
 102/name = "building_103"
 102/texture = ExtResource( 6 )
-102/tex_offset = Vector2( 0, 0 )
+102/tex_offset = Vector2( 0, -28 )
 102/modulate = Color( 1, 1, 1, 1 )
 102/region = Rect2( 0, 0, 133, 127 )
 102/is_autotile = false
@@ -1431,5 +1431,5 @@
 142/occluder_offset = Vector2( 66, 50.5 )
 142/navigation_offset = Vector2( 66, 50.5 )
 142/shapes = [  ]
-_sections_unfolded = [ "106", "110", "121", "128", "133", "134", "142" ]
+_sections_unfolded = [ "102", "106", "110", "121", "128", "133", "134", "142", "59" ]
 

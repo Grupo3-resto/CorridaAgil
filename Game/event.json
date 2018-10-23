@@ -1,14 +1,22 @@
 {
     "positive":[
         {
-		"effect":[0,3],
-        "text": "test positive event"
+		"effect":[0,2],
+        "text": 
+    "Sua equipe entregou um protótipo funcional ao cliente em cada corrida. 
+    Avance 2 casas e seja promovido/ganhe bônus.
+                
+    No agilismo, um dos princípios e de entregar 
+    valor ao cliente em cada etapa. 
+    Assim, as metas de cada corrida são estabelecidas
+    de forma a cumprir requisitos funcionais importantes"
         }
     ],  
     "negative":[
         {
-		"effect":[1,5],
-        "text": "test negative event"
+		"effect":[0,2],
+        "text": "Sua equipe não analisou todas as anomalias detectadas na reunião de inspeção. 
+    Volte 2 casas e perca um nível de promoção/ perca bônus."
         }
     ]
 }

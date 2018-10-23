@@ -10,6 +10,7 @@ var ChoiceList = []   #Uma lista com as opções para cada dialogo
 var AnswerList = []   #Uma lista com as respostas de cada dialogo
 var DialogueCount = 0 #O numero de dialogos a serem mostrados em sequencias
 
+
 func _ready():
 	$Panel.hide()
 	PanelSize = Vector2($Panel.margin_right - $Panel.margin_left , $Panel.margin_bottom - $Panel.margin_top)

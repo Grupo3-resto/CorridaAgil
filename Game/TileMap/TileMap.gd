@@ -61,6 +61,7 @@ func search_for_neighbors(cell = grid[player_tile]):
 	
 	return neighbors
 
+
 func move(spaces):
 	if(spaces > 0):
 		update_player(spaces, get_parent().get_node("Player").position)
@@ -69,6 +70,7 @@ func move(spaces):
 		for i in range(abs(spaces)):
 			path.push_back(passed_cell.pop_back())
 		update_player_path(path)
+
 
 func update_player_path(path):
 	var teste = path.back()
@@ -134,6 +136,7 @@ func update_player(distance, pos):
 				get_parent().get_node("HUD/Direction").show_buttons(neighbors)
 				yield(get_parent().get_node("HUD"), "direction_pressed")
 				cell = neighbors[get_parent().get_node("HUD").dir]
+				
 				get_parent().get_node("HUD/Direction").hide_buttons()
 			else:
 				cell = neighbors[get_first_non_nil(neighbors)]
