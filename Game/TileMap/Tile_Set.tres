@@ -1073,7 +1073,7 @@
 102/shapes = [  ]
 103/name = "building_104"
 103/texture = ExtResource( 7 )
-103/tex_offset = Vector2( 0, 0 )
+103/tex_offset = Vector2( 0, -28 )
 103/modulate = Color( 1, 1, 1, 1 )
 103/region = Rect2( 0, 0, 132, 127 )
 103/is_autotile = false
@@ -1307,7 +1307,7 @@
 128/shapes = [  ]
 129/name = "building_130"
 129/texture = ExtResource( 35 )
-129/tex_offset = Vector2( 0, 0 )
+129/tex_offset = Vector2( 0, -28 )
 129/modulate = Color( 1, 1, 1, 1 )
 129/region = Rect2( 0, 0, 132, 127 )
 129/is_autotile = false
@@ -1431,5 +1431,5 @@
 142/occluder_offset = Vector2( 66, 50.5 )
 142/navigation_offset = Vector2( 66, 50.5 )
 142/shapes = [  ]
-_sections_unfolded = [ "102", "106", "110", "121", "128", "133", "134", "142", "59" ]
+_sections_unfolded = [ "102", "103", "106", "110", "121", "128", "129", "133", "134", "142", "59" ]
 

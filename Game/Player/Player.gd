@@ -57,25 +57,25 @@ func change_direction(dir):
 
 #chama a função change_direction() e recebe a proxima celula como default
 func test_direction():
-	if get_node("/root/main/TileMap").ssize(get_node("/root/main/TileMap").search_for_neighbors()) == 1:
-		var dir = get_node("/root/main/TileMap").search_for_neighbors()[get_node("/root/main/TileMap").get_first_non_nil(get_node("/root/main/TileMap").search_for_neighbors())] - get_parent().get_node("TileMap/Path").world_to_map(position)
-		if dir.x != 0 and dir.y == 0:
-			if playerDirection == DOWN or playerDirection == UP:
-				if dir.x < 0:
-					change_direction(LEFT)
-				else:
-					change_direction(RIGHT)
-		if dir.x == 0 and dir.y != 0:
-			if playerDirection == RIGHT or playerDirection == LEFT:
-				if dir.y < 0:
-					change_direction(UP)
-				else:
-					change_direction(DOWN)
+	var dir = get_node("/root/main/TileMap").search_for_neighbors()[get_node("/root/main/TileMap").get_first_non_nil(get_node("/root/main/TileMap").search_for_neighbors())] - get_parent().get_node("TileMap/Path").world_to_map(position)
+	if dir.x != 0 and dir.y == 0:
+		if playerDirection == DOWN or playerDirection == UP:
+			if dir.x < 0:
+				change_direction(LEFT)
+			else:
+				change_direction(RIGHT)
+	if dir.x == 0 and dir.y != 0:
+		if playerDirection == RIGHT or playerDirection == LEFT:
+			if dir.y < 0:
+				change_direction(UP)
+			else:
+				change_direction(DOWN)
 
 
 func _process(delta):
 	if path.size() > 0:
 		target = path[0]
+		test_direction()
 		velocity = (target - position).normalized() * speed * delta
 		if(position - target).length() < 20:
 			test_direction()
