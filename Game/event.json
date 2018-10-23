@@ -1,14 +1,14 @@
 {
     "positive":[
         {
-		"effect":[1,1,1],
-            "text": "test positive event"
+		"effect":[0,3],
+        "text": "test positive event"
         }
     ],  
     "negative":[
         {
-		"effect":[1,1,1],
-            "text": "test negative event"
+		"effect":[1,5],
+        "text": "test negative event"
         }
     ]
 }

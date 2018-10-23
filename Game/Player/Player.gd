@@ -13,7 +13,7 @@ var path = []
 func start(pos):
 	position = pos
 	target = position
-	set_direction()
+	test_direction()
 
 
 func change_direction(dir):
@@ -56,7 +56,7 @@ func change_direction(dir):
 			$AnimatedSprite.playing = true
 
 #chama a função change_direction() e recebe a proxima celula como default
-func set_direction():
+func test_direction():
 	var dir = get_parent().get_node("TileMap").search_for_neighbors()[get_parent().get_node("TileMap").get_first_non_nil(get_parent().get_node("TileMap").search_for_neighbors())] - get_parent().get_node("TileMap/Path").world_to_map(position)
 	if dir.x != 0 and dir.y == 0:
 		if playerDirection == DOWN or playerDirection == UP:
@@ -76,8 +76,8 @@ func _process(delta):
 	if path.size() > 0:
 		target = path[0]
 		velocity = (target - position).normalized() * speed * delta
-		if(position - target).length() < 15:
-			set_direction()
+		if(position - target).length() < 20:
+			test_direction()
 		if(position - target).length() < 5:
 			velocity = Vector2(0,0)
 			path.pop_front()

@@ -45,13 +45,15 @@ func get_event(type, index):
 	
 func set_effects(type, index):
 	#Indices:
-	#	0: Andar x Casas
-	#	1: Pontos
-	#	2: Bla Bla Bla
-	effects = eventData[type][index]["effect"]
-	
+	#	0: typo do efeito[move = 0, socore = 1]
+	#	1: Quantidade de casas andadas ou de pontos ganhados
+	effects.push_back(eventData[type][index]["effect"])
+
+
 func apply_effects():
-	if(effects[0] != 0):
-		get_node("/root/main/TileMap").move(effects[0])
-	if(effects[1] != 0):
-		get_node("/root/main/HUD/Score").score += effects[1]
+	for i in effects:
+		if i[0] == 0:
+			get_node("/root/main/TileMap").move(i[1])
+		elif i[1] == 1:
+			get_node("/root/main/HUD/Score").score += i[1]
+	effects.clear()

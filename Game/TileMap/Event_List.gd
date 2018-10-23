@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Node
 
 
 enum state {ACTIVE, INACTIVE}
@@ -20,8 +20,6 @@ func _on_Player_has_stopped():
 		dialogue.insert("pergunta", questionsAsked) #LEMBRETE: usar questionAsked apenas provisoriamente
 		dialogue.show_dialogue()
 		yield(dialogue, "dialogue_end")
-		t.start()
-		yield(t, "timeout")
 		#mostra carta de eventos
 		event.insert("positive", 0)
 		event.show_event()
