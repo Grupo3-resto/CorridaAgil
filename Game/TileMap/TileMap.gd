@@ -1,6 +1,7 @@
 extends Node
 
 export (Vector2) var FirstTile
+export (Array, int) var PassablePaths #guarda todos os tiles que o player pode passar
 
 var half_tile_size 
 var grid= []         #array de todas as celulas usadas
@@ -8,15 +9,22 @@ var player_tile      #guarda o id da celula que o player esta posicionado
 var passed_cell = [] #guarda posição das celulas na quais o player ja passou
 var Player 
 
+# coloca na array de todas as celulas que o player pode passar
 func get_center(cell):
 	var pos = $Path.map_to_world(cell)
 	pos.y += half_tile_size.y
 	return pos
 
 
+func mark_path():
+	if PassablePaths != null:
+		for i in PassablePaths:
+			grid += $Path.get_used_cells_by_id(i)
+
+
 func _ready():
 	half_tile_size = $Path.get_cell_size() / 2
-	grid = $Path.get_used_cells ()  #array de todas as celulas usadas
+	mark_path()
 	player_tile = grid.find(FirstTile)
 	Player = get_parent().get_node("Player")
 	passed_cell.push_back(FirstTile)

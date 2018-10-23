@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=2]
+[gd_scene load_steps=142 format=2]
 
 [ext_resource path="res://assets/Isometrics Tiles/isometric-city/PNG/cityTiles_073.png" type="Texture" id=1]
 [ext_resource path="res://assets/Isometrics Tiles/isometric-city/PNG/cityTiles_081.png" type="Texture" id=2]
@@ -136,8 +136,13 @@
 [ext_resource path="res://assets/Isometrics Tiles/isometric-buildings/PNG/buildingTiles_021.png" type="Texture" id=134]
 [ext_resource path="res://assets/Isometrics Tiles/isometric-buildings/PNG/buildingTiles_032.png" type="Texture" id=135]
 [ext_resource path="res://assets/Isometrics Tiles/isometric-buildings/PNG/buildingTiles_038.png" type="Texture" id=136]
+[ext_resource path="res://assets/Isometrics Tiles/isometric-city/PNG/cityTiles_072.png" type="Texture" id=137]
+[ext_resource path="res://assets/Isometrics Tiles/isometric-city/PNG/cityTiles_041.png" type="Texture" id=138]
+[ext_resource path="res://assets/Isometrics Tiles/isometric-city/PNG/cityTiles_026.png" type="Texture" id=139]
+[ext_resource path="res://assets/Isometrics Tiles/isometric-city/PNG/cityTiles_034.png" type="Texture" id=140]
+[ext_resource path="res://assets/Isometrics Tiles/isometric-city/PNG/cityTiles_033.png" type="Texture" id=141]
 
-[node name="TileSet" type="Node2D" index="0"]
+[node name="TileSet" type="Node2D"]
 
 [node name="Street_01" type="Sprite" parent="." index="0"]
 
@@ -236,7 +241,7 @@ texture = ExtResource( 18 )
 
 [node name="Street_Curve_20" type="Sprite" parent="." index="19"]
 
-position = Vector2( 800, 2400 )
+position = Vector2( 800, 2403 )
 texture = ExtResource( 19 )
 
 [node name="Street_Curve_21" type="Sprite" parent="." index="20"]
@@ -286,7 +291,7 @@ texture = ExtResource( 28 )
 
 [node name="Street_CrossWalker__30" type="Sprite" parent="." index="29"]
 
-position = Vector2( 1200, 200 )
+position = Vector2( 1200, 201 )
 texture = ExtResource( 29 )
 
 [node name="Street_Finish_31" type="Sprite" parent="." index="30"]
@@ -744,9 +749,9 @@ texture = ExtResource( 119 )
 position = Vector2( 5400, 600 )
 texture = ExtResource( 120 )
 
-[node name="building122" type="Sprite" parent="." index="121"]
+[node name="building_122" type="Sprite" parent="." index="121"]
 
-position = Vector2( 5400, 800 )
+position = Vector2( 5400, 801 )
 texture = ExtResource( 121 )
 
 [node name="building_123" type="Sprite" parent="." index="122"]
@@ -789,7 +794,7 @@ texture = ExtResource( 128 )
 position = Vector2( 5400, 1600 )
 texture = ExtResource( 129 )
 
-[node name="buildingd_131" type="Sprite" parent="." index="130"]
+[node name="building_131" type="Sprite" parent="." index="130"]
 
 position = Vector2( 5400, 1800 )
 texture = ExtResource( 130 )
@@ -823,5 +828,35 @@ texture = ExtResource( 135 )
 
 position = Vector2( 5600, 600 )
 texture = ExtResource( 136 )
+
+[node name="high_empty_138" type="Sprite" parent="." index="137"]
+
+position = Vector2( 2800, 200 )
+texture = ExtResource( 137 )
+
+[node name="tunnel_139" type="Sprite" parent="." index="138"]
+
+position = Vector2( 3200, 0 )
+texture = ExtResource( 138 )
+
+[node name="tunnel_140" type="Sprite" parent="." index="139"]
+
+position = Vector2( 3200, 200 )
+texture = ExtResource( 139 )
+
+[node name="tunnel_141" type="Sprite" parent="." index="140"]
+
+position = Vector2( 3200, 400 )
+texture = ExtResource( 140 )
+
+[node name="tunnel_142" type="Sprite" parent="." index="141"]
+
+position = Vector2( 3200, 600 )
+texture = ExtResource( 141 )
+
+[node name="High_Empty_143" type="Sprite" parent="." index="142"]
+
+position = Vector2( 2800, 400 )
+texture = ExtResource( 75 )
 
 
