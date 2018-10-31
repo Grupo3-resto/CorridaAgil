@@ -830,7 +830,7 @@
 75/shapes = [  ]
 76/name = "Roofs_Flats_W_77"
 76/texture = ExtResource( 116 )
-76/tex_offset = Vector2( 0, 0 )
+76/tex_offset = Vector2( 17, -31 )
 76/modulate = Color( 1, 1, 1, 1 )
 76/region = Rect2( 0, 0, 99, 54 )
 76/is_autotile = false
@@ -866,7 +866,7 @@
 79/shapes = [  ]
 80/name = "Roofs_Flats_W_81"
 80/texture = ExtResource( 121 )
-80/tex_offset = Vector2( 0, 0 )
+80/tex_offset = Vector2( 17, -31 )
 80/modulate = Color( 1, 1, 1, 1 )
 80/region = Rect2( 0, 0, 99, 54 )
 80/is_autotile = false
@@ -893,7 +893,7 @@
 82/shapes = [  ]
 83/name = "Roofs_Trian_W_84"
 83/texture = ExtResource( 124 )
-83/tex_offset = Vector2( 0, 0 )
+83/tex_offset = Vector2( 18.5, -38 )
 83/modulate = Color( 1, 1, 1, 1 )
 83/region = Rect2( 0, 0, 99, 60 )
 83/is_autotile = false
@@ -911,7 +911,7 @@
 84/shapes = [  ]
 85/name = "Roofs_Smooth_O_86"
 85/texture = ExtResource( 126 )
-85/tex_offset = Vector2( 0, 0 )
+85/tex_offset = Vector2( 18.5, -40 )
 85/modulate = Color( 1, 1, 1, 1 )
 85/region = Rect2( 0, 0, 99, 62 )
 85/is_autotile = false
@@ -1431,5 +1431,5 @@
 142/occluder_offset = Vector2( 66, 50.5 )
 142/navigation_offset = Vector2( 66, 50.5 )
 142/shapes = [  ]
-_sections_unfolded = [ "102", "103", "106", "110", "121", "128", "129", "133", "134", "142", "59" ]
+_sections_unfolded = [ "102", "103", "106", "110", "121", "128", "129", "133", "134", "142", "59", "76", "80", "81", "82", "83", "84", "85", "86", "87", "88" ]
 
