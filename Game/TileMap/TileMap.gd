@@ -31,34 +31,33 @@ func _ready():
 	Player.start(get_center(grid[player_tile]))
 
 
-func search_for_neighbors(cell = grid[player_tile]):
+func search_for_neighbors(cell = grid[player_tile], forbiddenCells = passed_cell ):
 	var aux = cell
 	var neighbors = [null, null, null, null]
 	
 # na direita
 	aux.x = cell.x + 1
 	aux.y = cell.y
-	if grid.has(aux) and !passed_cell.has(aux):
+	if grid.has(aux) and !forbiddenCells.has(aux):
 		neighbors[0] = aux
 # em baio
 	aux = cell
 	aux.x = cell.x
 	aux.y = cell.y + 1
-	if grid.has(aux)  and !passed_cell.has(aux):
+	if grid.has(aux)  and !forbiddenCells.has(aux):
 		neighbors[1] = aux
 # na esquerda
 	aux = cell
 	aux.x = cell.x - 1
 	aux.y = cell.y
-	if grid.has(aux) and !passed_cell.has(aux):
+	if grid.has(aux) and !forbiddenCells.has(aux):
 		neighbors[2] = aux
 # em cima
 	aux = cell
 	aux.x = cell.x
 	aux.y = cell.y - 1
-	if grid.has(aux)  and !passed_cell.has(aux):
+	if grid.has(aux)  and !forbiddenCells.has(aux):
 		neighbors[3] = aux
-	
 	return neighbors
 
 
@@ -141,6 +140,6 @@ func update_player(distance, pos):
 			else:
 				cell = neighbors[get_first_non_nil(neighbors)]
 			dAux -= 1
-			passed_cell.push_back(cell)
+			passed_cell.push_back(cell) 
 			path.push_back(cell)
 	update_player_path(path)
