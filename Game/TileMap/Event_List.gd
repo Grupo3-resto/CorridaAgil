@@ -7,8 +7,8 @@ var eventState = ACTIVE
 
 func _on_Player_has_stopped(): 
 	if eventState == ACTIVE:
-		var dialogue = get_parent().get_parent().get_node("HUD").get_node("Dialogue")
-		var event = get_parent().get_parent().get_node("HUD").get_node("Event_Cards")
+		var dialogue = get_node("/root/main/HUD/Dialogue")
+		var event = get_node("/root/main/HUD/Event_Cards")
 		var t = Timer.new()
 		t.set_wait_time(0.25)
 		self.add_child(t)

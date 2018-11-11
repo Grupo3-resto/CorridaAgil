@@ -19,7 +19,7 @@ func show_result(result, pos):
 	t.set_one_shot(true)
 	self.add_child(t)
 	t.start()
-	get_parent().get_node("HUD/RollDice").hide()
+	get_node("/root/main/HUD/RollDice").hide()
 	position = pos
 	position.x += 200
 	position.y += 200
@@ -38,7 +38,7 @@ func show_result(result, pos):
 		$dice_6.show()
 	yield(t, "timeout")
 	t.queue_free()
-	get_parent().get_node("HUD/RollDice").show()
+	get_node("/root/main/HUD/RollDice").show()
 	hide_dice()
 	
 

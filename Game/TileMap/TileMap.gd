@@ -26,7 +26,7 @@ func _ready():
 	half_tile_size = $Path.get_cell_size() / 2
 	push_path()
 	player_tile = grid.find(FirstTile)
-	Player = get_parent().get_node("Player")
+	Player = get_node("/root/main/Player")
 	passed_cell.push_back(FirstTile)
 	Player.start(get_center(grid[player_tile]))
 
@@ -63,9 +63,9 @@ func search_for_neighbors(cell = grid[player_tile], forbiddenCells = passed_cell
 
 func move(spaces):
 	if(spaces > 0):
-		update_player(spaces, get_parent().get_node("Player").position)
+		update_player(spaces, Player.position)
 	else:
-		var path = [$Path.world_to_map(get_parent().get_node("Player").position)]
+		var path = [$Path.world_to_map(Player.position)]
 		for i in range(abs(spaces)):
 			path.push_back(passed_cell.pop_back())
 		update_player_path(path)
@@ -132,11 +132,11 @@ func update_player(distance, pos):
 				path.clear()
 				path.push_back(cellAux)
 				distance = dAux
-				get_parent().get_node("HUD/Direction").show_buttons(neighbors)
-				yield(get_parent().get_node("HUD"), "direction_pressed")
-				cell = neighbors[get_parent().get_node("HUD").dir]
+				get_node("/root/main/HUD/Direction").show_buttons(neighbors)
+				yield(get_node("/root/main/HUD"), "direction_pressed")
+				cell = neighbors[get_node("/root/main/HUD").dir]
 				
-				get_parent().get_node("HUD/Direction").hide_buttons()
+				get_node("/root/main/HUD/Direction").hide_buttons()
 			else:
 				cell = neighbors[get_first_non_nil(neighbors)]
 			dAux -= 1

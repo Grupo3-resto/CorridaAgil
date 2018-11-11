@@ -60,10 +60,14 @@ func change_direction(dir):
 
 #chama a função change_direction() e recebe a proxima celula como default
 func test_direction():
-	
+	var nextCell
 	var neighbors = get_node("/root/main/TileMap").search_for_neighbors(myCell, passedCells)
-	var firstNonNil = get_node("/root/main/TileMap").get_first_non_nil(neighbors)
-	var nextCell = neighbors[firstNonNil]
+	if get_node("/root/main/TileMap").ssize(neighbors) > 1:
+		yield(get_node("/root/main/HUD"), "direction_pressed")
+		nextCell = neighbors[get_node("/root/main/HUD").dir]
+	else:
+		var firstNonNil = get_node("/root/main/TileMap").get_first_non_nil(neighbors)
+		nextCell = neighbors[firstNonNil]
 	var dir = nextCell - myCell
 	
 	if dir.x != 0 and dir.y == 0:
