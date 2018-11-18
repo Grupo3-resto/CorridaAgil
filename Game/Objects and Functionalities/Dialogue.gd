@@ -96,6 +96,7 @@ func next_or_end():
 	AnswerList.pop_front()
 	if DialogueCount == 0:
 		$Panel.hide()
+		get_node("/root/main/HUD/RollDice").show()
 		emit_signal("dialogue_end")
 	else:
 		show_dialogue()

@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/Score_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://HUD/Score.gd" type="Script" id=4]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -16,6 +16,7 @@ script = ExtResource( 1 )
 
 [node name="RollDice" type="Button" parent="." index="0"]
 
+visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0

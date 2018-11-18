@@ -8,7 +8,7 @@
 [ext_resource path="res://Objects and Functionalities/Dice.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=7]
 
-[node name="main" type="Node" index="0"]
+[node name="main" type="Node"]
 
 script = ExtResource( 1 )
 

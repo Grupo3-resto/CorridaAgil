@@ -14,11 +14,11 @@ func _ready():
 
 
 func show_result(result, pos):
-	var t = Timer.new()
-	t.set_wait_time(2)
-	t.set_one_shot(true)
-	self.add_child(t)
-	t.start()
+	#var t = Timer.new()
+	#t.set_wait_time(2)
+	#t.set_one_shot(true)
+	#self.add_child(t)
+	#t.start()
 	get_node("/root/main/HUD/RollDice").hide()
 	position = pos
 	position.x += 200
@@ -36,9 +36,10 @@ func show_result(result, pos):
 		$dice_5.show()
 	elif result == 6:
 		$dice_6.show()
-	yield(t, "timeout")
-	t.queue_free()
-	get_node("/root/main/HUD/RollDice").show()
+	#t.queue_free()
 	hide_dice()
+	yield(get_node("/root/main/HUD/Event_Cards"), "event_end")
+	get_node("/root/main/HUD/RollDice").show()
+	
 	
 
