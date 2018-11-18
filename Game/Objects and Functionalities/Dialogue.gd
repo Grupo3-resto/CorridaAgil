@@ -10,8 +10,23 @@ var ChoiceList = []   #Uma lista com as opções para cada dialogo
 var AnswerList = []   #Uma lista com as respostas de cada dialogo
 var DialogueCount = 0 #O numero de dialogos a serem mostrados em sequencias
 
+func shuffleList(list):
+	randomize()
+	var shuffledList = [] 
+	var correct
+	var x
+	var indexList = range(list.size())
+
+	for i in range(list.size()):
+		x = randi()%indexList.size()
+		if indexList[x] == 0:
+			correct = i
+		shuffledList.append(list[indexList[x]])
+		indexList.remove(x)
+	return [shuffledList, correct]
 
 func _ready():
+
 	$Panel.hide()
 	PanelSize = Vector2($Panel.margin_right - $Panel.margin_left , $Panel.margin_bottom - $Panel.margin_top)
 	load_json()
@@ -32,7 +47,10 @@ func show_dialogue():
 	if DialogueCount > 0 :
 		$Panel.show()
 		display_dialogue(DialogueList[0])
-		display_choices(ChoiceList[0], AnswerList[0])
+		if ChoiceList[0] != null:
+			var shuffle = shuffleList(ChoiceList[0])
+			ChoiceList[0] = shuffle[0]
+			display_choices(ChoiceList[0], shuffle[1])
 	else:
 		print("erro!! não existem dialogos na lista")
 
