@@ -5,8 +5,8 @@ export (int) var speed = 200
 
 enum direction {RIGHT, DOWN, LEFT, UP}
 var playerDirection = RIGHT
-var target = Vector2()
-var velocity = Vector2()
+var target = Vector2(0,0)
+var velocity = Vector2(0,0)
 var path = []
 var passedCells = []
 var myCell
@@ -63,8 +63,8 @@ func test_direction():
 	var nextCell
 	var neighbors = get_node("/root/main/TileMap").search_for_neighbors(myCell, passedCells)
 	if get_node("/root/main/TileMap").ssize(neighbors) > 1:
-		yield(get_node("/root/main/HUD"), "direction_pressed")
-		nextCell = neighbors[get_node("/root/main/HUD").dir]
+		yield(get_node("/root/main/HUD/Dialogue"), "dialogue_end")
+		nextCell = neighbors[get_node("/root/main/HUD/Dialogue").chooseDir]
 	else:
 		var firstNonNil = get_node("/root/main/TileMap").get_first_non_nil(neighbors)
 		nextCell = neighbors[firstNonNil]

@@ -26,7 +26,7 @@ func _ready():
 	half_tile_size = $Path.get_cell_size() / 2
 	push_path()
 	player_tile = grid.find(FirstTile)
-	Player = get_node("/root/main/Player")
+	Player = get_node("Path/Player")
 	passed_cell.push_back(FirstTile)
 	Player.start(get_center(grid[player_tile]))
 
@@ -132,14 +132,16 @@ func update_player(distance, pos):
 				path.clear()
 				path.push_back(cellAux)
 				distance = dAux
-				get_node("/root/main/HUD/Direction").show_buttons(neighbors)
-				yield(get_node("/root/main/HUD"), "direction_pressed")
-				cell = neighbors[get_node("/root/main/HUD").dir]
-				
-				get_node("/root/main/HUD/Direction").hide_buttons()
+				get_node("/root/main/HUD/Dialogue").insert("Bifurcação", 0, neighbors)
+				if get_node("Path/Player").target != get_node("Path/Player").position:
+					yield(get_node("Path/Player") , "has_stopped")
+				get_node("/root/main/HUD/Dialogue").show_dialogue()
+				yield(get_node("/root/main/HUD/Dialogue"), "dialogue_end")
+				cell = neighbors[get_node("/root/main/HUD/Dialogue").chooseDir]
 			else:
 				cell = neighbors[get_first_non_nil(neighbors)]
 			dAux -= 1
 			passed_cell.push_back(cell) 
 			path.push_back(cell)
 	update_player_path(path)
+

@@ -14,16 +14,8 @@ func _ready():
 
 
 func show_result(result, pos):
-	#var t = Timer.new()
-	#t.set_wait_time(2)
-	#t.set_one_shot(true)
-	#self.add_child(t)
-	#t.start()
 	get_node("/root/main/HUD/RollDice").hide()
-	position = pos
-	position.x += 200
-	position.y += 200
-	hide_dice()	
+	hide_dice()
 	if result == 1:
 		$dice_1.show()
 	elif result == 2:
@@ -36,10 +28,7 @@ func show_result(result, pos):
 		$dice_5.show()
 	elif result == 6:
 		$dice_6.show()
-	#t.queue_free()
-	hide_dice()
 	yield(get_node("/root/main/HUD/Event_Cards"), "event_end")
+	hide_dice()
 	get_node("/root/main/HUD/RollDice").show()
-	
-	
 

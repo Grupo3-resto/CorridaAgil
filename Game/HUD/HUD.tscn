@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://HUD/HUD.gd" type="Script" id=1]
-[ext_resource path="res://HUD/Direction.gd" type="Script" id=2]
-[ext_resource path="res://assets/Score_font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://HUD/Score.gd" type="Script" id=4]
+[ext_resource path="res://assets/Score_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://HUD/Score.gd" type="Script" id=3]
 
-[node name="HUD" type="CanvasLayer" index="0"]
+[node name="HUD" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -41,133 +40,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Margin", "Material", "Pause", "Visibility" ]
 
-[node name="Direction" type="Control" parent="." index="1"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-script = ExtResource( 2 )
-_sections_unfolded = [ "Visibility" ]
-
-[node name="Left" type="Button" parent="Direction" index="0"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 723.0
-margin_top = 543.0
-margin_right = 759.0
-margin_bottom = 563.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Left"
-flat = false
-align = 1
-_sections_unfolded = [ "Visibility" ]
-
-[node name="Right" type="Button" parent="Direction" index="1"]
-
-visible = false
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 772.0
-margin_top = 505.0
-margin_right = 816.0
-margin_bottom = 525.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Right"
-flat = false
-align = 1
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Visibility" ]
-
-[node name="Up" type="Button" parent="Direction" index="2"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 764.0
-margin_top = 513.0
-margin_right = 817.0
-margin_bottom = 533.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Up"
-flat = false
-align = 1
-_sections_unfolded = [ "Visibility" ]
-
-[node name="Down" type="Button" parent="Direction" index="3"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 766.0
-margin_top = 573.0
-margin_right = 814.0
-margin_bottom = 593.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Down"
-flat = false
-align = 1
-_sections_unfolded = [ "Visibility" ]
-
-[node name="Voltar_menu" type="Button" parent="." index="2"]
+[node name="Voltar_menu" type="Button" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -192,7 +65,7 @@ text = "Voltar para o menu"
 flat = false
 align = 1
 
-[node name="Score" type="RichTextLabel" parent="." index="3"]
+[node name="Score" type="RichTextLabel" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -209,7 +82,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 size_flags_stretch_ratio = 0.0
-custom_fonts/normal_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 2 )
 custom_colors/default_color = Color( 1, 0.960938, 0, 1 )
 bbcode_enabled = false
 bbcode_text = ""
@@ -222,18 +95,10 @@ scroll_active = true
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 _sections_unfolded = [ "Anchor", "BBCode", "Grow Direction", "Margin", "Rect", "custom_colors", "custom_fonts" ]
 
 [connection signal="pressed" from="RollDice" to="." method="_on_RollDice_pressed"]
-
-[connection signal="pressed" from="Direction/Left" to="." method="_on_Left_pressed"]
-
-[connection signal="pressed" from="Direction/Right" to="." method="_on_Right_pressed"]
-
-[connection signal="pressed" from="Direction/Up" to="." method="_on_Up_pressed"]
-
-[connection signal="pressed" from="Direction/Down" to="." method="_on_Down_pressed"]
 
 [connection signal="pressed" from="Voltar_menu" to="." method="_on_Voltar_menu_pressed"]
 
