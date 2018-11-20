@@ -133,8 +133,7 @@ func update_player(distance, pos):
 				path.push_back(cellAux)
 				distance = dAux
 				get_node("/root/main/HUD/Dialogue").insert("Bifurcação", 0, neighbors)
-				if get_node("Path/Player").target != get_node("Path/Player").position:
-					yield(get_node("Path/Player") , "has_stopped")
+				yield(get_node("Path/Player") , "has_stopped")
 				get_node("/root/main/HUD/Dialogue").show_dialogue()
 				yield(get_node("/root/main/HUD/Dialogue"), "dialogue_end")
 				cell = neighbors[get_node("/root/main/HUD/Dialogue").chooseDir]

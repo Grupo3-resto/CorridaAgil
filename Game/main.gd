@@ -2,7 +2,6 @@ extends Node
 
 func _ready():
 	$HUD/Dialogue.insert("dialogo", 0)
-	$HUD/Dialogue.insert("dialogo", 1)
 	$HUD/Dialogue.show_dialogue()
 
 func roll_dice():
