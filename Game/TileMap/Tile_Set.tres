@@ -668,7 +668,7 @@
 57/shapes = [  ]
 58/name = "Grass_59"
 58/texture = ExtResource( 97 )
-58/tex_offset = Vector2( 0, 0 )
+58/tex_offset = Vector2( 0, -12 )
 58/modulate = Color( 1, 1, 1, 1 )
 58/region = Rect2( 0, 0, 132, 113 )
 58/is_autotile = false
@@ -881,12 +881,7 @@
 81/is_autotile = false
 81/occluder_offset = Vector2( 49.5, 30 )
 81/navigation_offset = Vector2( 49.5, 30 )
-81/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"shape": null,
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+81/shapes = [  ]
 82/name = "Roofs_Trian_W_83"
 82/texture = ExtResource( 123 )
 82/tex_offset = Vector2( 0, 0 )
@@ -1024,7 +1019,7 @@
 96/shapes = [  ]
 97/name = "building_98"
 97/texture = ExtResource( 139 )
-97/tex_offset = Vector2( 0, 0 )
+97/tex_offset = Vector2( 0, -29 )
 97/modulate = Color( 1, 1, 1, 1 )
 97/region = Rect2( 0, 0, 132, 127 )
 97/is_autotile = false
@@ -1436,5 +1431,5 @@
 142/occluder_offset = Vector2( 66, 50.5 )
 142/navigation_offset = Vector2( 66, 50.5 )
 142/shapes = [  ]
-_sections_unfolded = [ "102", "103", "106", "110", "121", "128", "129", "133", "134", "142", "59", "81", "83", "84", "85", "86", "87", "88" ]
+_sections_unfolded = [ "102", "103", "106", "110", "121", "128", "129", "133", "134", "142", "58", "59", "81", "83", "84", "85", "86", "87", "88", "97" ]
 
