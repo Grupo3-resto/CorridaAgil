@@ -170,7 +170,7 @@ func _on_choice_button_pressed(id, resposta):
 		index += 1
 	
 	if(id == resposta):
-		get_node("/root/main/HUD/Score").score += 1
+		get_node("/root/main/HUD/Score").score += 200
 		get_node("/root/main/HUD/Score").update_score()
 	if StateList[0] == BIFURCACAO:
 		chooseDir = id

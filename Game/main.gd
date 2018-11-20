@@ -7,6 +7,6 @@ func _ready():
 
 func roll_dice():
 	randomize()
-	var distance = randi()%6 + 1
+	var distance = randi()%3 + 1
 	$HUD/Dice.show_result(distance, get_node("TileMap/Path/Player").position)
 	$TileMap.update_player(distance, get_node("TileMap/Path/Player").position)
