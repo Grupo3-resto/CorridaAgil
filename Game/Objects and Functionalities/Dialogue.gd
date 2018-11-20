@@ -179,7 +179,7 @@ func _on_choice_button_pressed(id, resposta):
 #Carrega o json como um dicionario em dialogData
 func load_json():
 	var file = File.new()
-	file.open("res://dialogo.json", File.READ)
+	print(file.open("res://dialogo.json", File.READ))
 	dialogData = JSON.parse(file.get_as_text()).result
 	file.close()
 

@@ -1,22 +1,136 @@
 {
     "positive":[
         {
-		"effect":[0,2],
-        "text": 
-    "Sua equipe entregou um protótipo funcional ao cliente em cada corrida. 
-    Avance 2 casas e seja promovido/ganhe bônus.
-                
-    No agilismo, um dos princípios e de entregar 
-    valor ao cliente em cada etapa. 
-    Assim, as metas de cada corrida são estabelecidas
-    de forma a cumprir requisitos funcionais importantes"
+    "effect":[0,2],
+          "text": "Sua equipe Scrum está completa."
         }
-    ],  
-    "negative":[
+        {
+    "effect":[0,2],
+          "text": "Sua equipe cumpriu a meta de cada corrida de um projeto, realizando cada desejo expresso pelo cliente."
+        }
+        {
+    "effect":[0,2],
+        "text": " Sua equipe terminou um item do backlog da sprint. Agora o item está com o status “pronto”."
+        }
+        {
+    "effect":[0,2],
+        "text": "Suas histórias de usuário foram muito bem escritas e suas decisões sobre os próximos passos do projeto se mostraram estar no caminho certo."
+        }
         {
 		"effect":[0,2],
-        "text": "Sua equipe não analisou todas as anomalias detectadas na reunião de inspeção. 
-    Volte 2 casas e perca um nível de promoção/ perca bônus."
+        "text": "Sua equipe entregou um protótipo funcional ao cliente em cada corrida."
+        }
+
+
+        {
+    "effect":[0,2],
+        "text": "O backlog do produto foi refinado: novos detalhes foram adicionados aos itens."
+        }
+        {
+    "effect":[0,2],
+        "text": "A retrospectiva da corrida detectou melhorias a serem implementadas na próxima corrida."
+        }
+        {
+    "effect":[0,2],
+        "text": "Sua equipe conseguiu implementar todos os itens do backlog da corrida."
+        }
+        {
+    "effect":[0,2],
+        "text": "A sua equipe de desenvolvimento é muito bem organizada e competente."
+        }
+        {
+    "effect":[0,2],
+        "text": "Ao final da corrida, sua equipe se reuniu para a revisão da corrida."
+        }
+        {
+    "effect":[0,2],
+        "text": "O feedback de sua última build foi muito positivo."
+        }
+        {
+    "effect":[0,2],
+        "text": "Sua equipe terminou mais um incremento."
+        }
+
+        {
+    "effect":[0,2],
+        "text": "A sua equipe de desenvolvimento é bem variada."
+        }
+
+    ],
+    "negative":[
+      {
+  "effect":[0,2],
+      "text": "A corrida foi mal planejada no planejamento da corrida, e muitas dos incrementos não puderam ser implementados."
+      }
+      {
+  "effect":[0,2],
+      "text": "Sua equipe não está usando um backlog da corrida."
+      }
+      {
+  "effect":[0,2],
+      "text": "Sua implantação do Scrum ainda apresenta falhas e a maioria dos novos membros ainda não lidou com essa metodologia ágil. Você terá que orientar a equipe passo a passo durante a corrida."
+      }
+
+      {
+  "effect":[0,2],
+      "text": "Sua equipe não analisou todas as anomalias detectadas na reunião de inspeção."
+      }
+      {
+  "effect":[0,2],
+      "text": "O dono do produto em uma de suas equipes não atualizou a lista reserva de requisitos do produto ao longo das corridas."
+      }
+      {
+  "effect":[0,2],
+      "text": "Durante a implantação do Scrum, a inspeção foi deixada de lado e o projeto apresentou defeitos."
+      }
+      {
+  "effect":[0,2],
+      "text": "O cliente mudou requisitos do projeto, e a corrida teve que ser cancelada."
+      }
+      {
+  "effect":[0,2],
+      "text": "A reunião de requisitos não produziu um documento claro."
+      }
+      {
+  "effect":[0,2],
+      "text": "Você atuou como mestre scrum e decidiu pular a reunião de retrospectiva do projeto, isso te fez repetir as mesmas falhas da corrida anterior e desgastou a equipe."
+      }
+
+      {
+  "effect":[0,2],
+      "text": "Sua equipe não conseguiu completar a corrida."
+      }
+
+      {
+  "effect":[0,2],
+      "text": " O dono do produto se acidentou. Como consequência, o backlog do produto não foi organizado corretamente."
+      }
+      {
+  "effect":[0,2],
+      "text": "Os desenvolvedores calcularam mal o tempo para cada tarefa da corrida e não conseguiram concluir boa parte das tarefas a tempo."
+      }
+      {
+  "effect":[0,2],
+      "text": "O mestre do Scrum não foi capaz de ajudar a equipe a se auto-organizar."
+      }
+
+        {
+    "effect":[0,2],
+        "text": "Sua equipe cresceu demais e você não percebeu a tempo de fazer uma Corrida de Corridas."
+        }
+
+        {
+    "effect":[0,2],
+        "text": "O cliente não está satisfeito com o andamento do projeto."
+        }
+        {
+    "effect":[0,2],
+        "text": "Sua equipe não estava aberta a mudanças introduzidas pelo cliente."
+        }
+
+        {
+    "effect":[0,2],
+        "text": "Sua projeto está sendo feito pela internet. Algumas falhas de comunicação ocorreram."
         }
     ]
 }

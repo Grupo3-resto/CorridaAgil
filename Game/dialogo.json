@@ -15,23 +15,45 @@
 				"Complicado e confuso"
 			]
 		}
+
+		,
 		{
-			"text": "Sobre a função do dono do produto é correto afirmar que:",
+			"text": "Sobre as equipes de desenvolvimento, responda:",
 			"correct": 0,
 			"opcoes":[
-				"Tem a visão do que a equipe fará, produzirá ou realizará",
-				"Liderar a equipe",
-				"Remover os obstaculos que podem atrabalhar o sprint"
+				"Elas se auto-organizam, e escolhem como vão trabalhar.",
+				"A equipe é especializada; não há variedade de habilidades e funções",
+				"Ela pode se dividir em sub-equipes para facilitar a administração."
 			]
 		}
 		,
 		{
-			"text": "Sobre as sprints é errado afirmar que:",
+			"text": "Sobre a função do dono do produto é correto afirmar que:",
 			"correct": 0,
 			"opcoes":[
-				"Não precisam ter uma duração determinada",
-				"Cada sprint tem um objetivo para ser concluído",
-				"No fim de uma sprint outra deve começar em seguida"
+				"Detém a visão do que a equipe fará, produzirá ou realizará",
+				"Liderar a equipe",
+				"Remover os obstáculos que podem atrapalhar o sprint"
+			]
+		}
+		,
+		{
+			"text": "Sobre o time scrum, qual das alternativas representa os todos os papéis presente no scrum?",
+			"correct": 0,
+			"opcoes":[
+				"Mestre scrum, dono do produto e desenvolvedores.",
+				"Mestre scrum, dono do produto, desenvolvedores e testadores.",
+				"Dono do produto, desenvolvedores, gerência e testadores."
+			]
+		}
+		,
+		{
+			"text": "É função do mestre scrum:",
+			"correct": 0,
+			"opcoes":[
+				"Servir o time como um mentor e mediador.",
+				"Trabalhar na reserva do produto.",
+				"Resolver problemas de desenvolvimento."
 			]
 		}
 		,
@@ -67,8 +89,14 @@
 	],
 	"Bifurcação":[
 		{
-			"text": "Teste:"
-		}
+			"text": "O Scrum exige uma documentação abrangente para o projeto utilizando UML ou qualquer outra ferramenta desse tipo?",
+			"correct": 0,
+			"opcoes":[
+				"Não",
+				"Sim",
+				"Depende do seu gerente."
+			]
+		},
+
 	]
 }
-
