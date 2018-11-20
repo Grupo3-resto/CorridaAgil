@@ -3,7 +3,10 @@ extends Node
 enum state {ACTIVE, INACTIVE}
 
 export (Array) var eventSpots = []
+export (Array) var questionSpots = []
+
 var eventState = ACTIVE
+var questionsAsked = 0
 
 func _on_Player_has_stopped(): 
 	if eventState == ACTIVE:
@@ -12,7 +15,7 @@ func _on_Player_has_stopped():
 		var t = Timer.new()
 		t.set_wait_time(0.25)
 		self.add_child(t)
-		if eventSpot.has(get_parent().grid[get_parent().player_tile]):
+		if eventSpots.has(get_parent().grid[get_parent().player_tile]):
 			t.start()
 			yield(t, "timeout")
 			#mostra carta de eventos

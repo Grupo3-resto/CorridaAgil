@@ -11,6 +11,15 @@
 	],
 	"pergunta":[
 		{
+			"text": "O Scrum é:",
+			"correct": 0,
+			"opcoes":[
+				"Fácil de entender.",
+				"Fácil de dominar completamente",
+				"Complicado e confuso"
+			]
+		}
+		{
 			"text": "Sobre a função do dono do produto é correto afirmar que:",
 			"correct": 0,
 			"opcoes":[
